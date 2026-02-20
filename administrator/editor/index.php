@@ -68,16 +68,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><title><?= $sm['config']['name']; ?> - <?= $theme; ?> Theme Editor Panel</title>
+<meta charset="utf-8"><title><?php echo  $sm['config']['name']; ?> - <?php echo  $theme; ?> Theme Editor Panel</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="theme-color" content="#ffffff">
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="<?= $sm['config']['site_url']; ?>administrator/editor/css/ui.css">
-<link rel="stylesheet" href="<?= $sm['config']['site_url']; ?>administrator/editor/css/global.css">
-<link rel="stylesheet" href="<?= $sm['config']['site_url']; ?>administrator/editor/css/editor.css" />
+<link rel="stylesheet" href="<?php echo  $sm['config']['site_url']; ?>administrator/editor/css/ui.css">
+<link rel="stylesheet" href="<?php echo  $sm['config']['site_url']; ?>administrator/editor/css/global.css">
+<link rel="stylesheet" href="<?php echo  $sm['config']['site_url']; ?>administrator/editor/css/editor.css" />
 <link rel="stylesheet" href="<?php echo $sm['config']['site_url']; ?>themes/default/css/crossplatform.css"/>
-<link rel="stylesheet" type="text/css" href="<?= $sm['config']['site_url']; ?>administrator/editor/css/fontselect.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo  $sm['config']['site_url']; ?>administrator/editor/css/fontselect.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo $sm['config']['site_url']; ?>themes/default/css/vendor/little-widgets.css"/>    
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet" type="text/css"/>
 <style type="text/css" media="screen">
@@ -175,7 +175,7 @@ function site_url(){
             </a>';
             ?>
             <?php if($page == 1){ ?>
-              <label class="item <?= $class;?>" style="cursor: pointer;color: #222" data-tab="<?= $p['page']; ?>" data-tab-pages for="toggle">
+              <label class="item <?php echo  $class;?>" style="cursor: pointer;color: #222" data-tab="<?php echo  $p['page']; ?>" data-tab-pages for="toggle">
                 Pages  
               </label>
           <?php }
@@ -185,8 +185,8 @@ function site_url(){
           $pageLink = 'index.php?landing='.$theme.'&landingPreset='.$preset;
         }        
       ?>
-        <a class="item <?= $class;?>" data-tab="<?= $p['page']; ?>" style="color: #111">
-          <?= $p['page']; ?>
+        <a class="item <?php echo  $class;?>" data-tab="<?php echo  $p['page']; ?>" style="color: #111">
+          <?php echo  $p['page']; ?>
         </a>
         
   <?php } } ?>  
@@ -194,7 +194,7 @@ function site_url(){
   <input type="checkbox" checked style="display: none" id="toggle"> 
   <div class="dropdown box-shadow-iframe">
     <div class="arrow"></div>
-    <?= $pagesDropDown; ?>
+    <?php echo  $pagesDropDown; ?>
   </div>
 
   <?php if($themeType == 'Mobile'){ ?>
@@ -203,12 +203,12 @@ function site_url(){
 
     <?php if($themeLivePreset != $preset){ ?>
       <a class="ui green tiny button autoSave" style="background: #21C459;color: #fff;cursor: default;">Auto Saving</a>   
-      <a href="<?= $liveDemoUrl; ?>" target="_blank" class="ui green tiny button liveDemo box-shadow-btn" style="background: none;color: #4b367c;">Test live demo</a>    
+      <a href="<?php echo  $liveDemoUrl; ?>" target="_blank" class="ui green tiny button liveDemo box-shadow-btn" style="background: none;color: #4b367c;">Test live demo</a>
       <a class="ui green tiny button save gradient32" data-live-site="1" style="background: #4b367c">Set as live theme</a>
       <a class="ui green tiny button save gradient32" data-live-site="2" style="background: #43a922;display: none;cursor: default;">Editing live theme</a>
     <?php } else { ?>
       <a class="ui green tiny button autoSave" style="background: #21C459;color: #fff;cursor: default;">Auto Saving</a>       
-      <a href="<?= $liveDemoUrl; ?>" target="_blank" class="ui green tiny button liveDemo box-shadow-btn" style="background: none;color: #4b367c;">Test live demo</a>      
+      <a href="<?php echo  $liveDemoUrl; ?>" target="_blank" class="ui green tiny button liveDemo box-shadow-btn" style="background: none;color: #4b367c;">Test live demo</a>
       <a class="ui green tiny button save gradient32" data-live-site="2" style="background: #43a922;cursor: default;">Editing live theme</a>
     <?php } ?>
 
@@ -232,7 +232,7 @@ function site_url(){
       }
     ?>
 
-    <div class="ui bottom attached tab segment <?= $class; ?>" style="padding: 8px;margin-top: 3.75rem;background: #f0f2f4" data-current-tab="<?= $p; ?>">
+    <div class="ui bottom attached tab segment <?php echo  $class; ?>" style="padding: 8px;margin-top: 3.75rem;background: #f0f2f4" data-current-tab="<?php echo  $p; ?>">
           <div class="ui form" >  
     <?php
       $settings = getDataArrayFull('theme_settings','where theme = "'.$theme.'" and page = "'.$p.'" ORDER BY block_orden ASC, setting_orden ASC');
@@ -247,31 +247,31 @@ function site_url(){
         </div>
       <?php } ?>   
       <?php if($prevBlock != $s['block'] || $blockCount == 0){ ?>
-        <div class="ui segment" data-current-block="<?=$s['block']; ?>" data-segment-require="<?=$s['setting_require']; ?>" style="display: <?=$displayDesignStyle; ?>;">
-          <h3 class="ui header"><?= $s['block_title']; ?></h3>
+        <div class="ui segment" data-current-block="<?php echo $s['block']; ?>" data-segment-require="<?php echo $s['setting_require']; ?>" style="display: <?php echo $displayDesignStyle; ?>;">
+          <h3 class="ui header"><?php echo  $s['block_title']; ?></h3>
       <?php } ?>
 
           <?php if($s['setting_type'] == 'image'){ ?>
             <div class="ui equal height two column grid img-upload" style="width:88%;padding-top: 15px">
           <?php } else { ?>
-            <div class="ui equal height two column grid" data-segment="<?=$s['setting']; ?>" data-block="<?= $s['block']; ?>" data-segment-require="<?=$s['setting_require']; ?>" style="display: <?=$displayDesignStyle; ?>">
+            <div class="ui equal height two column grid" data-segment="<?php echo $s['setting']; ?>" data-block="<?php echo  $s['block']; ?>" data-segment-require="<?php echo $s['setting_require']; ?>" style="display: <?php echo $displayDesignStyle; ?>">
           <?php } ?> 
 
           <?php if($s['setting_type'] != 'font'){ ?>              
           <div class="column">
             <div class="header" style="padding-top: 5px">
-              <?= $s['header']; ?>
+              <?php echo  $s['header']; ?>
             </div>
 
             <?php if($s['subheader'] != ''){?>
               <div class="subheader">
-                <?= $s['subheader']; ?>
+                <?php echo  $s['subheader']; ?>
               </div>
             <?php } ?>
             
             <?php if($s['setting_type'] == 'image'){ ?>
               <div class="subheader">
-                <span class="upload" style="color: #7513e4" data-update-image-progress="<?= $s['setting'];?>"></span>
+                <span class="upload" style="color: #7513e4" data-update-image-progress="<?php echo  $s['setting'];?>"></span>
               </div>
             <?php } ?>
           </div>
@@ -280,8 +280,8 @@ function site_url(){
           <?php if($s['setting_type'] == 'image'){ ?>
             <div class="column img-preview">
               
-                <div class="image" data-update-image="<?= $s['setting'];?>" style="cursor: pointer;">
-                  <img src="<?= $s['setting_val']; ?>">
+                <div class="image" data-update-image="<?php echo  $s['setting'];?>" style="cursor: pointer;">
+                  <img src="<?php echo  $s['setting_val']; ?>">
                 </div>
               
             </div>
@@ -296,10 +296,10 @@ function site_url(){
             <div class="column">
               <fieldset class="ui toggles">
                 <div>
-                  <input type="checkbox" <?= $checked; ?> id="<?= $s['setting'];?>"  
-                  data-theme-setting="<?= $s['setting']; ?>" 
-                  data-theme-type="<?= $s['setting_type']; ?>">
-                  <label for="<?= $s['setting'];?>">&nbsp;</label>
+                  <input type="checkbox" <?php echo  $checked; ?> id="<?php echo  $s['setting'];?>"
+                  data-theme-setting="<?php echo  $s['setting']; ?>"
+                  data-theme-type="<?php echo  $s['setting_type']; ?>">
+                  <label for="<?php echo  $s['setting'];?>">&nbsp;</label>
                 </div>
               </fieldset>              
             </div>
@@ -309,16 +309,16 @@ function site_url(){
             <div class="column color-picker cover-image-bg">
               <div class="ui labeled input">
                 <?php if (strpos($s['setting_val'], 'gradient') !== false) { ?>
-                  <div class="ui label pickr-elem <?= $s['setting_val']; ?>" data-gradient="<?= $s['gradient']; ?>" data-color="<?= $s['setting']; ?>"></div>
+                  <div class="ui label pickr-elem <?php echo  $s['setting_val']; ?>" data-gradient="<?php echo  $s['gradient']; ?>" data-color="<?php echo  $s['setting']; ?>"></div>
                 <?php } else { ?> 
-                  <div class="ui label pickr-elem" data-color="<?= $s['setting']; ?>" data-gradient="<?= $s['gradient']; ?>"  style="cursor:pointer;background: <?= $s['setting_val']; ?>"></div>
+                  <div class="ui label pickr-elem" data-color="<?php echo  $s['setting']; ?>" data-gradient="<?php echo  $s['gradient']; ?>"  style="cursor:pointer;background: <?php echo  $s['setting_val']; ?>"></div>
                 <?php } ?>
                 <input class="pickr-hex" type="text" placeholder=""
-                        name="<?= $s['setting']; ?>" data-color-val="<?= $s['setting']; ?>"
-                        value="<?= $s['setting_val']; ?>"
-                        data-theme-setting="<?= $s['setting']; ?>" 
-                        data-theme-gradient="<?= $s['gradient']; ?>" 
-                        data-theme-type="<?= $s['setting_type']; ?>"
+                        name="<?php echo  $s['setting']; ?>" data-color-val="<?php echo  $s['setting']; ?>"
+                        value="<?php echo  $s['setting_val']; ?>"
+                        data-theme-setting="<?php echo  $s['setting']; ?>"
+                        data-theme-gradient="<?php echo  $s['gradient']; ?>"
+                        data-theme-type="<?php echo  $s['setting_type']; ?>"
                 >
               </div>
             </div>
@@ -327,14 +327,14 @@ function site_url(){
           <?php if($s['setting_type'] == 'font'){ ?>
             <div class="column" style="margin-bottom: 10px">
             <div class="header" style="padding-top: 5px;padding-bottom: 10px">
-              <?= $s['header']; ?>
+              <?php echo  $s['header']; ?>
             </div>              
               <div class="ui labeled input">
-                <input class="update-text-href"  data-font="<?= $s['setting']; ?>" type="text" placeholder=""
-                        name="<?= $s['setting']; ?>" data-color-val="<?= $s['setting']; ?>"
-                        value="<?= $s['setting_val']; ?>"
-                        data-theme-setting="<?= $s['setting']; ?>" 
-                        data-theme-type="<?= $s['setting_type']; ?>"
+                <input class="update-text-href"  data-font="<?php echo  $s['setting']; ?>" type="text" placeholder=""
+                        name="<?php echo  $s['setting']; ?>" data-color-val="<?php echo  $s['setting']; ?>"
+                        value="<?php echo  $s['setting_val']; ?>"
+                        data-theme-setting="<?php echo  $s['setting']; ?>"
+                        data-theme-type="<?php echo  $s['setting_type']; ?>"
                 >
               </div>
             </div>
@@ -344,10 +344,10 @@ function site_url(){
             <div class="column">             
               <div class="ui labeled input">
                 <input class="update-text-href" type="number" placeholder=""
-                        name="<?= $s['setting']; ?>" data-color-val="<?= $s['setting']; ?>"
-                        value="<?= $s['setting_val']; ?>"
-                        data-theme-setting="<?= $s['setting']; ?>" 
-                        data-theme-type="<?= $s['setting_type']; ?>"
+                        name="<?php echo  $s['setting']; ?>" data-color-val="<?php echo  $s['setting']; ?>"
+                        value="<?php echo  $s['setting_val']; ?>"
+                        data-theme-setting="<?php echo  $s['setting']; ?>"
+                        data-theme-type="<?php echo  $s['setting_type']; ?>"
                 >
               </div>
             </div>
@@ -357,15 +357,15 @@ function site_url(){
             <div class="column">             
               <div class="ui labeled input">
                 <select class="update-text-href" placeholder=""
-                        name="<?= $s['setting']; ?>" data-color-val="<?= $s['setting']; ?>"
-                        value="<?= $s['setting_val']; ?>"
-                        data-theme-setting="<?= $s['setting']; ?>" 
-                        data-theme-type="<?= $s['setting_type']; ?>"
+                        name="<?php echo  $s['setting']; ?>" data-color-val="<?php echo  $s['setting']; ?>"
+                        value="<?php echo  $s['setting_val']; ?>"
+                        data-theme-setting="<?php echo  $s['setting']; ?>"
+                        data-theme-type="<?php echo  $s['setting_type']; ?>"
                 >
                 <?php $select =  explode(',', $s['setting_options'] );
                 foreach ($select as $option) { $selected = ''; ?>
                 <?php if($option == $s['setting_val']){ $selected = 'selected';} ?>  
-                  <option value="<?=$option;?>" <?= $selected; ?>> <?= $option; ?> </option>
+                  <option value="<?php echo $option;?>" <?php echo  $selected; ?>> <?php echo  $option; ?> </option>
                 <?php } ?>                
               </select>
               </div>
@@ -376,23 +376,23 @@ function site_url(){
             <div class="column">             
               <div class="ui labeled input">
                 <input class="update-text-href"  type="text" placeholder=""
-                        name="<?= $s['setting']; ?>" data-color-val="<?= $s['setting']; ?>"
-                        value="<?= $s['setting_val']; ?>"
-                        data-theme-setting="<?= $s['setting']; ?>" 
-                        data-theme-type="<?= $s['setting_type']; ?>"
+                        name="<?php echo  $s['setting']; ?>" data-color-val="<?php echo  $s['setting']; ?>"
+                        value="<?php echo  $s['setting_val']; ?>"
+                        data-theme-setting="<?php echo  $s['setting']; ?>"
+                        data-theme-type="<?php echo  $s['setting_type']; ?>"
                 >
               </div>
             </div>
           <?php } ?>                                        
 
           <?php if($s['setting_type'] == 'designStyle'){ ?>  
-          <div class="column" style="padding-top: 15px;display: <?=$displayDesignStyle; ?>"> 
+          <div class="column" style="padding-top: 15px;display: <?php echo $displayDesignStyle; ?>">
           <?php $select =  explode( ',', $s['setting_options'] );
           foreach ($select as $option) { $selected = ''; ?> 
             <?php if($option == $s['setting_val']){ $selected = 'selected';} ?>           
               <div class="style-icon" style="display: inline-table;margin-right: 5px;">
-                <img class="<?= $selected; ?>" style="border-radius: 2px;cursor: pointer;width: 42px" src="<?= $sm['config']['site_url']; ?>administrator/editor/img/<?=$option; ?>.png" data-theme-setting-click
-                        data-theme-setting="<?= $s['setting']; ?>" data-theme-setting-val="<?= $option; ?>">
+                <img class="<?php echo  $selected; ?>" style="border-radius: 2px;cursor: pointer;width: 42px" src="<?php echo  $sm['config']['site_url']; ?>administrator/editor/img/<?php echo $option; ?>.png" data-theme-setting-click
+                        data-theme-setting="<?php echo  $s['setting']; ?>" data-theme-setting-val="<?php echo  $option; ?>">
               </div>
             <?php } ?>
           </div>
@@ -405,8 +405,8 @@ function site_url(){
           foreach ($select as $option) { $selected = ''; ?> 
             <?php if($option == $s['setting_val']){ $selected = 'selected';} ?>           
               <div class="style-icon" style="display: inline-table;margin-right: 8px;margin-bottom: 10px">
-                <img class="<?= $selected; ?>" style="border-radius: 2px;cursor: pointer;width: 55px;border: 2px solid #eee" src="<?= $sm['config']['site_url']; ?>administrator/editor/img/<?=$option; ?>.png" data-theme-setting-click
-                        data-theme-setting="<?= $s['setting']; ?>" data-theme-setting-val="<?= $option; ?>">
+                <img class="<?php echo  $selected; ?>" style="border-radius: 2px;cursor: pointer;width: 55px;border: 2px solid #eee" src="<?php echo  $sm['config']['site_url']; ?>administrator/editor/img/<?php echo $option; ?>.png" data-theme-setting-click
+                        data-theme-setting="<?php echo  $s['setting']; ?>" data-theme-setting-val="<?php echo  $option; ?>">
               </div>
             <?php } ?>
           </div>
@@ -414,7 +414,7 @@ function site_url(){
 
 
         </div>
-        <p data-footer-theme-update="<?= $s['setting']; ?>" style="position: absolute;top:18px;right:5px;width: 80px;height: 20px;background: #48ba16;color: #fff;font-weight: 500;border-radius:5px;text-align: center;line-height: 20px;font-size: 10px;display: none">Updated</p>
+        <p data-footer-theme-update="<?php echo  $s['setting']; ?>" style="position: absolute;top:18px;right:5px;width: 80px;height: 20px;background: #48ba16;color: #fff;font-weight: 500;border-radius:5px;text-align: center;line-height: 20px;font-size: 10px;display: none">Updated</p>
   
        
       <?php $prevBlock = $s['block'];$blockCount++; } ?>      
@@ -504,7 +504,7 @@ function site_url(){
   </div> 
 <?php } else { ?>
   <div class="header" id="editor-header">
-    <h3><i>live preview</i><br><span><?= $themeName; ?></span></h3>
+    <h3><i>live preview</i><br><span><?php echo  $themeName; ?></span></h3>
   </div>  
   <div id="iframe-wrapper"  id="iframeWrapper">
     <?php 
@@ -517,7 +517,7 @@ function site_url(){
     ?>
     <iframe 
       id="iframe"
-      src="<?= $iframeUrl; ?>" 
+      src="<?php echo  $iframeUrl; ?>"
       frameborder="0"
       scrolling="yes"
       
@@ -528,7 +528,7 @@ function site_url(){
 
 
 <div class="editor-footer" style="background: #fff;">
-  <p style="color: #222"><?= $sm['config']['name']; ?> Theme Editor - Powered by <a href="https://globalpremiumscript.framer.ai" target="_blank"><strong>Global Premium Script</strong></a>
+  <p style="color: #222"><?php echo  $sm['config']['name']; ?> Theme Editor - Powered by <a href="https://globalpremiumscript.framer.ai" target="_blank"><strong>Global Premium Script</strong></a>
 </div>
 <div id="upload-area" style="display: none">
   <input type='file' id="uploadContent">
@@ -572,10 +572,10 @@ function site_url(){
 <script src="<?php echo $sm['config']['site_url']; ?>themes/default/js/vendor/little-widgets.js"></script>
 <script>
 
-  var globalKey = '<?= siteConfig('client'); ?>';
+  var globalKey = '<?php echo  siteConfig('client'); ?>';
   var previewUrl = 'meet';
-  var theme = '<?= $theme; ?>';
-  var preset = '<?= $preset; ?>';
+  var theme = '<?php echo  $theme; ?>';
+  var preset = '<?php echo  $preset; ?>';
   var uploadImage;
   var viewportwidth;
   var viewportheight;
@@ -603,10 +603,10 @@ function site_url(){
 
     var iframe = $('#iframe');
     var pUrl;
-    var themeType = '<?= $themeType; ?>';
+    var themeType = '<?php echo  $themeType; ?>';
 
     if(themeType == 'Landing'){
-      pUrl = 'index.php?landing=<?= $theme; ?>&landingPreset=<?= $preset; ?>';
+      pUrl = 'index.php?landing=<?php echo  $theme; ?>&landingPreset=<?php echo  $preset; ?>';
     }
 
     $('#use-gradient').click(function(){
@@ -628,7 +628,7 @@ function site_url(){
           type: "post",
           dataType: 'JSON',           
           complete: function() {
-            iframe.attr('src','<?= $sm['config']['site_url']; ?>'+pUrl);
+            iframe.attr('src','<?php echo  $sm['config']['site_url']; ?>'+pUrl);
           },
       });        
     }) 
@@ -657,10 +657,10 @@ function site_url(){
         $('[data-tab-pages]').addClass('active');
         if(pUrl.indexOf('profile') >= 0){
 
-          pUrl = '@'+<?= $profileShowId; ?>;
+          pUrl = '@'+<?php echo  $profileShowId; ?>;
         }
         if(pUrl.indexOf('prooffline') >= 0){
-          pUrl = 'index.php?page=profile&id='+<?= $profileShowId; ?>+'&view=editor';
+          pUrl = 'index.php?page=profile&id='+<?php echo  $profileShowId; ?>+'&view=editor';
         }        
         if(pUrl.indexOf('default') >= 0){
           pUrl = 'matches';
@@ -670,14 +670,14 @@ function site_url(){
       }
       
       if(themeType == 'Landing'){
-        pUrl = 'index.php?landing=<?= $theme; ?>&landingPreset=<?= $preset; ?>';
+        pUrl = 'index.php?landing=<?php echo  $theme; ?>&landingPreset=<?php echo  $preset; ?>';
       }
       $('[data-current-tab]').removeClass('active');
       $('[data-current-tab='+tab+']').addClass('active');
       console.log('purl:'+pUrl);
       console.log('tab:'+tab);
       if(pUrl != previewUrl && tab != 'pages'){
-        iframe.attr('src','<?= $sm['config']['site_url']; ?>'+pUrl);
+        iframe.attr('src','<?php echo  $sm['config']['site_url']; ?>'+pUrl);
         previewUrl = pUrl;
       }
       
@@ -772,7 +772,7 @@ function site_url(){
       val = val.split('+').join(' ');
 
       if(themeType == 'Landing'){
-        pUrl = 'index.php?landing=<?= $theme; ?>&landingPreset=<?= $preset; ?>';
+        pUrl = 'index.php?landing=<?php echo  $theme; ?>&landingPreset=<?php echo  $preset; ?>';
       }
 
       $.ajax({
@@ -790,7 +790,7 @@ function site_url(){
           type: "post",
           dataType: 'JSON',           
           complete: function() {          
-          iframe.attr('src','<?= $sm['config']['site_url']; ?>'+pUrl);
+          iframe.attr('src','<?php echo  $sm['config']['site_url']; ?>'+pUrl);
           },
       });      
       $('[data-footer-theme-update]').fadeOut('fast');
@@ -801,7 +801,7 @@ function site_url(){
     $('[data-theme-setting-click]').click(function(){
       $('[data-theme-setting-click]').removeClass('selected');
       $(this).addClass('selected');
-      var theme = '<?= $theme; ?>';    
+      var theme = '<?php echo  $theme; ?>';
       var setting = $(this).attr('data-theme-setting');
       var val = $(this).attr('data-theme-setting-val');
       var type = 'click';
@@ -824,7 +824,7 @@ function site_url(){
       }    
 
       if(themeType == 'Landing'){
-        pUrl = 'index.php?landing=<?= $theme; ?>&landingPreset=<?= $preset; ?>';
+        pUrl = 'index.php?landing=<?php echo  $theme; ?>&landingPreset=<?php echo  $preset; ?>';
       }        
       $.ajax({
           url: request_source()+'/admin.php', 
@@ -841,7 +841,7 @@ function site_url(){
           type: "post",
           dataType: 'JSON',           
           complete: function() {
-            iframe.attr('src','<?= $sm['config']['site_url']; ?>'+pUrl);
+            iframe.attr('src','<?php echo  $sm['config']['site_url']; ?>'+pUrl);
           },
       });      
       $('[data-footer-theme-update]').fadeOut('fast');
@@ -904,9 +904,9 @@ function site_url(){
             dataType: 'JSON',           
             complete: function() {
               if(themeType == 'Landing'){
-                pUrl = 'index.php?landing=<?= $theme; ?>&landingPreset=<?= $preset; ?>';
+                pUrl = 'index.php?landing=<?php echo  $theme; ?>&landingPreset=<?php echo  $preset; ?>';
               }              
-              iframe.attr('src','<?= $sm['config']['site_url']; ?>'+pUrl);
+              iframe.attr('src','<?php echo  $sm['config']['site_url']; ?>'+pUrl);
             },
         });      
         $('[data-footer-theme-update]').fadeOut('fast');

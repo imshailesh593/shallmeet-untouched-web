@@ -34,31 +34,31 @@
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Total</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users_photos',''); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users_photos',''); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Real</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users_photos','where fake = 0'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users_photos','where fake = 0'); ?></div>
           </div>
       </div>      
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Fake</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users_photos','where fake = 1'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users_photos','where fake = 1'); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Public</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users_photos','where blocked = 0'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users_photos','where blocked = 0'); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Private</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users_photos','where blocked = 1'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users_photos','where blocked = 1'); ?></div>
           </div>
       </div>                                                    
   </div>

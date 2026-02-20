@@ -72,14 +72,14 @@
                
               ?>
                   <div class="col-lg-7 card-body bg-light" >
-                    <p><strong class="headings-color"><?= $title; ?></strong></p>
+                    <p><strong class="headings-color"><?php echo  $title; ?></strong></p>
                     <p class="text-muted">
-                      <?= $p; ?>
+                      <?php echo  $p; ?>
                     </p>
                   </div>
                   <div class="col-lg-5 card-form__body card-body d-flex align-items-center bg-white" >
                     <div class="flex" style="">
-                        <label for="pricing" ><?= $key; ?></label><br>
+                        <label for="pricing" ><?php echo  $key; ?></label><br>
 
                         <?php if($key != 'chat'){
                             $checked = '';
@@ -88,12 +88,12 @@
                             }
                         ?>
                           <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1" > 
-                              <input <?=$checked; ?> type="checkbox" data-account-check="basic<?= $key; ?>" id="basic<?= $key; ?>" data-account-id="1" data-account-col="<?= $key; ?>" class="custom-control-input" >
-                              <label class="custom-control-label" for="basic<?= $key; ?>"></label>
+                              <input <?php echo $checked; ?> type="checkbox" data-account-check="basic<?php echo  $key; ?>" id="basic<?php echo  $key; ?>" data-account-id="1" data-account-col="<?php echo  $key; ?>" class="custom-control-input" >
+                              <label class="custom-control-label" for="basic<?php echo  $key; ?>"></label>
                           </div>
-                          <label for="basic<?= $key; ?>" class="mb-0" ></label>                    
+                          <label for="basic<?php echo  $key; ?>" class="mb-0" ></label>
                         <?php } else { ?>
-                          <input type="number" data-account-id="1" data-account-col="<?= $key; ?>" value="<?= $val; ?>" class="form-control" style="width:90px;">             
+                          <input type="number" data-account-id="1" data-account-col="<?php echo  $key; ?>" value="<?php echo  $val; ?>" class="form-control" style="width:90px;">
                         <?php } ?>
                     </div>                              
                   </div>             
@@ -154,14 +154,14 @@
                
               ?>
                   <div class="col-lg-7 card-body bg-light" >
-                    <p><strong class="headings-color"><?= $title; ?></strong></p>
+                    <p><strong class="headings-color"><?php echo  $title; ?></strong></p>
                     <p class="text-muted">
-                      <?= $p; ?>
+                      <?php echo  $p; ?>
                     </p>
                   </div>
                   <div class="col-lg-5 card-form__body card-body d-flex align-items-center bg-white" >
                     <div class="flex" style="">
-                        <label for="pricing" ><?= $key; ?></label><br>
+                        <label for="pricing" ><?php echo  $key; ?></label><br>
 
                         <?php if($key != 'chat'){
                             $checked = '';
@@ -170,12 +170,12 @@
                             }
                         ?>
                           <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1" > 
-                              <input <?=$checked; ?> type="checkbox" data-account-check="premium<?= $key; ?>" id="premium<?= $key; ?>" data-account-id="2"  data-account-col="<?= $key; ?>" class="custom-control-input" >
-                              <label class="custom-control-label" for="premium<?= $key; ?>"></label>
+                              <input <?php echo $checked; ?> type="checkbox" data-account-check="premium<?php echo  $key; ?>" id="premium<?php echo  $key; ?>" data-account-id="2"  data-account-col="<?php echo  $key; ?>" class="custom-control-input" >
+                              <label class="custom-control-label" for="premium<?php echo  $key; ?>"></label>
                           </div>
-                          <label for="premium<?= $key; ?>" class="mb-0" ></label>                    
+                          <label for="premium<?php echo  $key; ?>" class="mb-0" ></label>
                         <?php } else { ?>
-                          <input type="number" data-account-id="2" data-account-col="<?= $key; ?>" value="<?= $val; ?>" class="form-control" style="width:90px;">             
+                          <input type="number" data-account-id="2" data-account-col="<?php echo  $key; ?>" value="<?php echo  $val; ?>" class="form-control" style="width:90px;">
                         <?php } ?>
                     </div>                              
                   </div>             

@@ -37,7 +37,7 @@ $url = str_replace('install/', '', url());
     <meta name="author" content="Global Premium Script - Lamat Software" />
     <link rel="shortcut icon" href="https://lamatt.serv00.net/favicon.png">
     <link rel="stylesheet" type="text/css" href="../administrator/login/css/base.css" />
-    <link rel="stylesheet" type="text/css" href="../themes/default/css/vendor/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
     <style>
         @font-face {
@@ -197,7 +197,7 @@ $url = str_replace('install/', '', url());
         <div style="position: absolute;top: 15px;left: 15px;z-index: 99">
             <img class="box-shadow" src="https://lamatt.serv00.net/favicon.png" style="border-radius: 10px;width:45px">
         </div>
-        <div class="content content--side main-content" data-step="1" style="background: #fdfdfd;display: none">
+        <div class="content content--side main-content" data-step="1" style="background: #fdfdfd;">
             <header class="lamat-header">
                 <h1 class="lamat-header__title" style="padding-top: 5px">Lamat Software Installer</h1>
                 <p class="info" style="color: #444;font-size: 14px">Thanks for Purchasing Lamat - Ultimate Online Dating
@@ -274,7 +274,7 @@ $url = str_replace('install/', '', url());
                         <li>Access to <b><span id="license-fake-users"></span></b> fake users.</li>
                         <li>Access to software plugins.</li>
                         <li>Free automatic updates.</li>
-                        <li>Register date <strong>(<?= date('d-m-Y'); ?>)</strong></li>
+                        <li>Register date <strong>(<?php echo date('d-m-Y'); ?>)</strong></li>
                     </ul>
                     <div style="width: 100% border: 1px #ddd solid;background: #eee; font-size: 16px">
                         <div style="float: left; padding-left: 15px;padding: 5px; margin-top: 7px; text-align: left;"
@@ -312,7 +312,7 @@ $url = str_replace('install/', '', url());
                 <div class="form__item">
                     <label class="form__label">Site URL - <small>Base url for the software</small></label>
                     <div class="form__input-wrap">
-                        <input class="form__input" type="text" name="url" value="<?= $url; ?>" required>
+                        <input class="form__input" type="text" name="url" value="<?php echo $url; ?>" required>
                     </div>
                 </div>
                 <div class="form__item">
@@ -519,8 +519,8 @@ $url = str_replace('install/', '', url());
         </div>
 
     </main>
-    <script src="../administrator/assets/vendor/jquery.min.js"></script>
-    <script src="../themes/default/js/vendor/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <script>
         var step = 1;
         var client = '';

@@ -207,7 +207,12 @@ if ($check_bar == '/') {
 
 
 // $sm['client'] = json_decode(getData('client', 'client', ''), true);
-$sm['client'] = json_decode("../../install/client.json", true);
+$client_file = __DIR__ . '/../../install/client.json';
+if (file_exists($client_file)) {
+    $sm['client'] = json_decode(file_get_contents($client_file), true);
+} else {
+    $sm['client'] = ['premium' => 1, 'active' => 1];
+}
 
 $wl = array(
   '127.0.0.1',

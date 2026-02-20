@@ -9,7 +9,7 @@
   <meta name="description" content="<?php echo $sm['seoLang']['landing'][2]['text']; ?>">
   <meta name="keywords" content="<?php echo $sm['seoLang']['landing'][3]['text']; ?>">
   <meta name="author" content="<?php echo $sm['config']['name']; ?>">
-  <link rel="icon" type="image/png" href="<?= $sm['landing']['favicon']['val']; ?>" sizes="32x32">
+  <link rel="icon" type="image/png" href="<?php echo  $sm['landing']['favicon']['val']; ?>" sizes="32x32">
   <!-- Bootstrap , fonts & icons  -->
   <link rel="stylesheet"
     href="<?php echo $sm['config']['theme_url_landing']; ?>/plugins/bootstrap/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
     echo '<link href="https://fonts.googleapis.com/css?family=' . $f . '" rel="stylesheet" type="text/css"/>';
   } ?>
   <style id="themeData">
-    <?= getLandingAbsolutePage('styles'); ?>
+    <?php echo  getLandingAbsolutePage('styles'); ?>
   </style>
   <script type="text/javascript">
     function inIframe() {
@@ -55,7 +55,7 @@
         x = w.innerWidth || e.clientWidth || g.clientWidth,
         y = w.innerHeight || e.clientHeight || g.clientHeight;
       if (x <= 768) {
-        window.location = '<?= $sm['config']['site_url']; ?>';
+        window.location = '<?php echo  $sm['config']['site_url']; ?>';
       }
     }
     if (inIframe() !== true) {
@@ -68,7 +68,7 @@
           x = w.innerWidth || e.clientWidth || g.clientWidth,
           y = w.innerHeight || e.clientHeight || g.clientHeight;
         if (x <= 768) {
-          window.location = '<?= $sm['config']['site_url']; ?>?page=login';
+          window.location = '<?php echo  $sm['config']['site_url']; ?>?page=login';
         }
       };
     }
@@ -119,17 +119,17 @@
 
   <?php if (!empty($sm['plugins']['analytics']['ga_id'])) { ?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= $sm['plugins']['analytics']['ga_id']; ?>"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo  $sm['plugins']['analytics']['ga_id']; ?>"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
 
-      gtag('config', '<?= $sm['plugins']['analytics']['ga_id']; ?>');
+      gtag('config', '<?php echo  $sm['plugins']['analytics']['ga_id']; ?>');
     </script>
   <?php } ?>
 
-  <?= $sm['plugins']['customHtml']['landing_header']; ?>
+  <?php echo  $sm['plugins']['customHtml']['landing_header']; ?>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -162,16 +162,16 @@
   <header class="flex flex-col sm:flex-row justify-between items-center px-6 sm:px-12">
     <div class="flex items-end justify-end gap-2 sm:gap-4 mb-4 sm:mb-0">
       <div class="overflow-hidden flex items-end justify-center">
-        <img src="<?= $sm['landing']['logo']['val']; ?>" alt="<?php echo $sm['seoLang']['landing'][1]['text']; ?> Logo"
+        <img src="<?php echo  $sm['landing']['logo']['val']; ?>" alt="<?php echo $sm['seoLang']['landing'][1]['text']; ?> Logo"
           class="w-32 h-12 sm:w-36 sm:h-18 object-contain mx-auto" />
       </div>
     </div>
     <nav class="flex flex-wrap justify-center gap-4 sm:gap-12 items-center text-base sm:text-lg md:text-xl font-medium">
-      <a href="<?= $sm['config']['site_url']; ?>" class="text-gray-600 hover:text-black">Home</a>
+      <a href="<?php echo  $sm['config']['site_url']; ?>" class="text-gray-600 hover:text-black">Home</a>
       <a href="#" class="text-gray-600 hover:text-black">Features</a>
       <a href="#" class="text-gray-600 hover:text-black">Download</a>
-      <a href="<?= $sm['config']['site_url']; ?>?page=login" class="text-gray-600 hover:text-black">Login</a>
-      <a href="<?= $sm['config']['site_url']; ?>?page=register" class="rainbow-text font-bold">Signup Now</a>
+      <a href="<?php echo  $sm['config']['site_url']; ?>?page=login" class="text-gray-600 hover:text-black">Login</a>
+      <a href="<?php echo  $sm['config']['site_url']; ?>?page=register" class="rainbow-text font-bold">Signup Now</a>
     </nav>
   </header>
 

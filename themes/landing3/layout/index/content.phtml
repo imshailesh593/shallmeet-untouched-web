@@ -16,7 +16,7 @@
     <meta name="description" content="<?php echo $sm['seoLang']['landing'][2]['text']; ?>">
     <meta name="keywords" content="<?php echo $sm['seoLang']['landing'][3]['text']; ?>">
     <meta name="author" content="<?php echo $sm['config']['name']; ?>">
-    <link rel="icon" type="image/png" href="<?= $sm['landing']['favicon']['val']; ?>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?php echo  $sm['landing']['favicon']['val']; ?>" sizes="32x32">
 
     <?php $fonts = getArrayDSelected('font', 'theme_preset_fonts', 'where preset = "' . $_SESSION['landingPreset'] . '"');
     foreach ($fonts as $font) {
@@ -25,7 +25,7 @@
         echo '<link href="https://fonts.googleapis.com/css?family=' . $f . '" rel="stylesheet" type="text/css"/>';
     } ?>
     <style id="themeData">
-        <?= getLandingAbsolutePage('styles'); ?>
+        <?php echo  getLandingAbsolutePage('styles'); ?>
     </style>
     <script type="text/javascript">
         function inIframe() {
@@ -43,7 +43,7 @@
                 x = w.innerWidth || e.clientWidth || g.clientWidth,
                 y = w.innerHeight || e.clientHeight || g.clientHeight;
             if (x <= 768) {
-                window.location = '<?= $sm['config']['site_url']; ?>';
+                window.location = '<?php echo  $sm['config']['site_url']; ?>';
             }
         }
         <?php if ($sm['landing']['show_mobile']['val'] == 'No') { ?>
@@ -57,7 +57,7 @@
                         x = w.innerWidth || e.clientWidth || g.clientWidth,
                         y = w.innerHeight || e.clientHeight || g.clientHeight;
                     if (x <= 768) {
-                        window.location = '<?= $sm['config']['site_url']; ?>?page=login';
+                        window.location = '<?php echo  $sm['config']['site_url']; ?>?page=login';
                     }
                 };
             }
@@ -111,17 +111,17 @@
     <?php if (!empty($sm['plugins']['analytics']['ga_id'])) { ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async
-            src="https://www.googletagmanager.com/gtag/js?id=<?= $sm['plugins']['analytics']['ga_id']; ?>"></script>
+            src="https://www.googletagmanager.com/gtag/js?id=<?php echo  $sm['plugins']['analytics']['ga_id']; ?>"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
 
-            gtag('config', '<?= $sm['plugins']['analytics']['ga_id']; ?>');
+            gtag('config', '<?php echo  $sm['plugins']['analytics']['ga_id']; ?>');
         </script>
     <?php } ?>
 
-    <?= $sm['plugins']['customHtml']['landing_header']; ?>
+    <?php echo  $sm['plugins']['customHtml']['landing_header']; ?>
 
     <style>
         .cities-list {
@@ -154,16 +154,16 @@
         <header>
             <nav>
                 <div class="logo" style="display: flex; justify-content: center; align-items: center;">
-                    <a href="<?php echo $sm['config']['site_url']; ?>"><img src="<?= $sm['landing']['logo']['val']; ?>"
+                    <a href="<?php echo $sm['config']['site_url']; ?>"><img src="<?php echo  $sm['landing']['logo']['val']; ?>"
                             alt="<?php echo $sm['config']['name']; ?> Logo"
                             style="max-height: 40px; object-fit: contain;"></a>
                 </div>
                 <ul>
-                    <li><a href="<?= $sm['config']['site_url']; ?>?page=features" class="nav-link">FEATURES</a></li>
-                    <li><a href="<?= $sm['config']['site_url']; ?>?page=safety" class="nav-link">SAFETY</a></li>
-                    <li><a href="<?= $sm['config']['site_url']; ?>?page=download" class="nav-link">DOWNLOAD</a></li>
-                    <li><a href="<?= $sm['config']['site_url']; ?>?page=login" class="nav-link">LOGIN</a></li>
-                    <li><a href="<?= $sm['config']['site_url']; ?>?page=register" class="nav-link">SIGNUP NOW</a></li>
+                    <li><a href="<?php echo  $sm['config']['site_url']; ?>?page=features" class="nav-link">FEATURES</a></li>
+                    <li><a href="<?php echo  $sm['config']['site_url']; ?>?page=safety" class="nav-link">SAFETY</a></li>
+                    <li><a href="<?php echo  $sm['config']['site_url']; ?>?page=download" class="nav-link">DOWNLOAD</a></li>
+                    <li><a href="<?php echo  $sm['config']['site_url']; ?>?page=login" class="nav-link">LOGIN</a></li>
+                    <li><a href="<?php echo  $sm['config']['site_url']; ?>?page=register" class="nav-link">SIGNUP NOW</a></li>
                 </ul>
             </nav>
         </header>

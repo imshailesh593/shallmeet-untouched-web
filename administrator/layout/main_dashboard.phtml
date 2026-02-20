@@ -67,7 +67,7 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                     <h4 class="font-weight-normal mb-3">Online Users <i
                             class="material-icons icon-muted icon-40pt ml-3">gps_fixed</i>
                     </h4>
-                    <h2 class="mb-5"><?= number_format($onlineUsersTotal); ?></h2>
+                    <h2 class="mb-5"><?php echo  number_format($onlineUsersTotal); ?></h2>
                     <h6 class="card-text">Increased by 60%</h6>
                 </div>
             </div>
@@ -80,7 +80,7 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                     <h4 class="font-weight-normal mb-3">Today Revenue <i
                             class="material-icons icon-muted icon-40pt ml-3">monetization_on</i>
                     </h4>
-                    <h2 class="mb-5"><?= $sm['plugins']['settings']['currencySymbol']; ?><?= $todayRevenue; ?></h2>
+                    <h2 class="mb-5"><?php echo  $sm['plugins']['settings']['currencySymbol']; ?><?php echo  $todayRevenue; ?></h2>
                     <h6 class="card-text">Decreased by 10%</h6>
                 </div>
             </div>
@@ -93,7 +93,7 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                     <h4 class="font-weight-normal mb-3">Today New Accounts <i
                             class="material-icons icon-muted icon-40pt ml-3">perm_identity</i>
                     </h4>
-                    <h2 class="mb-5"><?= $newAccounts; ?></h2>
+                    <h2 class="mb-5"><?php echo  $newAccounts; ?></h2>
                     <h6 class="card-text">Increased by 10%</h6>
                 </div>
             </div>
@@ -109,22 +109,22 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                 <div class="card-header p-0 bg-white nav">
                     <div class="row no-gutters flex" role="tablist">
                         <div class="col" data-toggle="chart" id="usersChart" data-target="#mainDashChart"
-                            data-update='{"data":{"datasets":[{"label": "Traffic", "data":[<?= $lastSevenDaysChartUsers; ?>]}]}}'
+                            data-update='{"data":{"datasets":[{"label": "Traffic", "data":[<?php echo  $lastSevenDaysChartUsers; ?>]}]}}'
                             data-prefix="" data-suffix="">
                             <a href="#" data-toggle="tab" role="tab" aria-selected="true"
                                 class="dashboard-area-tabs__tab card-body text-center active">
                                 <span class="card-header__title m-0">New users</span>
-                                <span class="text-amount"><?= number_format($lastSevenDays); ?></span>
+                                <span class="text-amount"><?php echo  number_format($lastSevenDays); ?></span>
                             </a>
                         </div>
                         <div class="col border-left" data-toggle="chart" data-target="#mainDashChart"
-                            data-update='{"data":{"datasets":[{"label": "Earnings", "data":[<?= $lastSevenDaysChartSales; ?>]}]}}'
+                            data-update='{"data":{"datasets":[{"label": "Earnings", "data":[<?php echo  $lastSevenDaysChartSales; ?>]}]}}'
                             data-prefix="$" data-suffix="">
                             <a href="#" data-toggle="tab" role="tab" aria-selected="false"
                                 class="dashboard-area-tabs__tab card-body text-center">
                                 <span class="card-header__title m-0">Sales</span>
                                 <span
-                                    class="text-amount"><?= $sm['plugins']['settings']['currencySymbol']; ?><?= number_format($lastSevenDaysSales); ?></span>
+                                    class="text-amount"><?php echo  $sm['plugins']['settings']['currencySymbol']; ?><?php echo  number_format($lastSevenDaysSales); ?></span>
                             </a>
                         </div>
                     </div>
@@ -150,9 +150,9 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                 <div class="card-body text-center">
                     <div class="mb-1"><i class="material-icons icon-muted icon-40pt">monetization_on</i></div>
                     <div class="text-amount">
-                        <?= $sm['plugins']['settings']['currencySymbol']; ?><?php echo number_format(selectSum('sales', 'amount')); ?>
+                        <?php echo  $sm['plugins']['settings']['currencySymbol']; ?><?php echo number_format(selectSum('sales', 'amount')); ?>
                     </div>
-                    <div class="card-header__title  mb-2">Lifetime Revenue in <?= $sm['settings']['currency']; ?>
+                    <div class="card-header__title  mb-2">Lifetime Revenue in <?php echo  $sm['settings']['currency']; ?>
                     </div>
                 </div>
             </div>
@@ -206,11 +206,11 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
 
                                         <div class="flex">
                                             <div class="d-flex align-items-middle">
-                                                <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                                <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
                                             </div>
-                                            <small><?= $value['message']; ?></small>
+                                            <small><?php echo  $value['message']; ?></small>
                                         </div>
-                                        <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                        <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                         <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                     </div>
                                 <?php } ?>
@@ -228,18 +228,18 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                         <div class="flex">
                                             <div class="d-flex align-items-middle">
                                                 <div class="avatar avatar-xxs mr-1">
-                                                    <img src="<?= $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
+                                                    <img src="<?php echo  $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
                                                 </div>
                                                 <div class="avatar avatar-xxs mr-1">
-                                                    <img src="<?= $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
+                                                    <img src="<?php echo  $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
                                                 </div>
-                                                <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                                <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                             </div>
-                                            <small><a href="#"><?= unicode2html($info['u1']['name']); ?></a> visited <a
-                                                    href="#"><?= unicode2html($info['u2']['name']); ?></a></small>
+                                            <small><a href="#"><?php echo  unicode2html($info['u1']['name']); ?></a> visited <a
+                                                    href="#"><?php echo  unicode2html($info['u2']['name']); ?></a></small>
                                         </div>
-                                        <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                        <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                         <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                     </div>
                                 <?php } ?>
@@ -258,17 +258,17 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                         <div class="flex">
                                             <div class="d-flex align-items-middle">
                                                 <div class="avatar avatar-xxs mr-1">
-                                                    <img src="<?= $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
+                                                    <img src="<?php echo  $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
                                                 </div>
                                                 <div class="avatar avatar-xxs mr-1">
-                                                    <img src="<?= $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
+                                                    <img src="<?php echo  $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
                                                 </div>
-                                                <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                                <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                             </div>
-                                            <small><?= unicode2html($info['message']); ?></small>
+                                            <small><?php echo  unicode2html($info['message']); ?></small>
                                         </div>
-                                        <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                        <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                         <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                     </div>
 
@@ -286,15 +286,15 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                         <div class="flex">
                                             <div class="d-flex align-items-middle">
                                                 <div class="avatar avatar-xxs mr-1">
-                                                    <img src="<?= $info['sale']['photo']; ?>" class="avatar-img rounded-circle">
+                                                    <img src="<?php echo  $info['sale']['photo']; ?>" class="avatar-img rounded-circle">
                                                 </div>
-                                                <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                                <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                             </div>
-                                            <small><a href="#"><?= unicode2html($info['sale']['name']); ?></a> purchased
-                                                <?= $info['sale']['amount']; ?> credits with <?= $info['sale']['method']; ?></small>
+                                            <small><a href="#"><?php echo  unicode2html($info['sale']['name']); ?></a> purchased
+                                                <?php echo  $info['sale']['amount']; ?> credits with <?php echo  $info['sale']['method']; ?></small>
                                         </div>
-                                        <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                        <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                         <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                     </div>
                                 <?php } ?>
@@ -311,18 +311,18 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                         <div class="flex">
                                             <div class="d-flex align-items-middle">
                                                 <div class="avatar avatar-xxs mr-1">
-                                                    <img src="<?= $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
+                                                    <img src="<?php echo  $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
                                                 </div>
                                                 <div class="avatar avatar-xxs mr-1">
-                                                    <img src="<?= $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
+                                                    <img src="<?php echo  $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
                                                 </div>
-                                                <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                                <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                             </div>
-                                            <small><a href="#"><?= unicode2html($info['u1']['name']); ?></a> liked <a
-                                                    href="#"><?= unicode2html($info['u2']['name']); ?></a></small>
+                                            <small><a href="#"><?php echo  unicode2html($info['u1']['name']); ?></a> liked <a
+                                                    href="#"><?php echo  unicode2html($info['u2']['name']); ?></a></small>
                                         </div>
-                                        <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                        <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                         <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                     </div>
                                 <?php } ?>
@@ -350,11 +350,11 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
 
                                     <div class="flex">
                                         <div class="d-flex align-items-middle">
-                                            <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                            <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
                                         </div>
-                                        <small><?= unicode2html($value['message']); ?></small>
+                                        <small><?php echo  unicode2html($value['message']); ?></small>
                                     </div>
-                                    <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                    <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                     <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                 </div>
 
@@ -381,15 +381,15 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                     <div class="flex">
                                         <div class="d-flex align-items-middle">
                                             <div class="avatar avatar-xxs mr-1">
-                                                <img src="<?= $info['sale']['photo']; ?>" class="avatar-img rounded-circle">
+                                                <img src="<?php echo  $info['sale']['photo']; ?>" class="avatar-img rounded-circle">
                                             </div>
-                                            <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                            <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                         </div>
-                                        <small><a href="#"><?= unicode2html($info['sale']['name']); ?></a> purchased
-                                            <?= $info['sale']['amount']; ?> credits with <?= $info['sale']['method']; ?></small>
+                                        <small><a href="#"><?php echo  unicode2html($info['sale']['name']); ?></a> purchased
+                                            <?php echo  $info['sale']['amount']; ?> credits with <?php echo  $info['sale']['method']; ?></small>
                                     </div>
-                                    <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                    <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                     <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                 </div>
 
@@ -415,17 +415,17 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                     <div class="flex">
                                         <div class="d-flex align-items-middle">
                                             <div class="avatar avatar-xxs mr-1">
-                                                <img src="<?= $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
+                                                <img src="<?php echo  $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
                                             </div>
                                             <div class="avatar avatar-xxs mr-1">
-                                                <img src="<?= $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
+                                                <img src="<?php echo  $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
                                             </div>
-                                            <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                            <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                         </div>
-                                        <small><?= unicode2html($info['message']); ?></small>
+                                        <small><?php echo  unicode2html($info['message']); ?></small>
                                     </div>
-                                    <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                    <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                     <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                 </div>
 
@@ -450,18 +450,18 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                     <div class="flex">
                                         <div class="d-flex align-items-middle">
                                             <div class="avatar avatar-xxs mr-1">
-                                                <img src="<?= $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
+                                                <img src="<?php echo  $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
                                             </div>
                                             <div class="avatar avatar-xxs mr-1">
-                                                <img src="<?= $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
+                                                <img src="<?php echo  $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
                                             </div>
-                                            <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                            <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                         </div>
-                                        <small><a href="#"><?= unicode2html($info['u1']['name']); ?></a> liked <a
-                                                href="#"><?= unicode2html($info['u2']['name']); ?></a></small>
+                                        <small><a href="#"><?php echo  unicode2html($info['u1']['name']); ?></a> liked <a
+                                                href="#"><?php echo  unicode2html($info['u2']['name']); ?></a></small>
                                     </div>
-                                    <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                    <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                     <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                 </div>
                             <?php } ?>
@@ -486,18 +486,18 @@ echo '<script>lastSevenDaysChartUsers = ' . json_encode($arrLastSevenDaysUsers) 
                                     <div class="flex">
                                         <div class="d-flex align-items-middle">
                                             <div class="avatar avatar-xxs mr-1">
-                                                <img src="<?= $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
+                                                <img src="<?php echo  $info['u1']['photo']; ?>" class="avatar-img rounded-circle">
                                             </div>
                                             <div class="avatar avatar-xxs mr-1">
-                                                <img src="<?= $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
+                                                <img src="<?php echo  $info['u2']['photo']; ?>" class="avatar-img rounded-circle">
                                             </div>
-                                            <strong class="text-15pt mr-1"><?= $value['title']; ?></strong>
+                                            <strong class="text-15pt mr-1"><?php echo  $value['title']; ?></strong>
 
                                         </div>
-                                        <small><a href="#"><?= unicode2html($info['u1']['name']); ?></a> visited <a
-                                                href="#"><?= unicode2html($info['u2']['name']); ?></a></small>
+                                        <small><a href="#"><?php echo  unicode2html($info['u1']['name']); ?></a> visited <a
+                                                href="#"><?php echo  unicode2html($info['u2']['name']); ?></a></small>
                                     </div>
-                                    <small class="text-muted"><?= time_elapsed_string($value['time']); ?></small>
+                                    <small class="text-muted"><?php echo  time_elapsed_string($value['time']); ?></small>
                                     <i class="material-icons icon-muted ml-3">arrow_forward</i>
                                 </div>
                             <?php } ?>

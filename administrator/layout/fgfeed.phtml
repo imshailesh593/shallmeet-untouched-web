@@ -15,44 +15,44 @@ global $adminUrl;
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Total</div>
-              <div class="text-amount ml-auto font16"><?= selectC('feed',''); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('feed',''); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Visible</div>
-              <div class="text-amount ml-auto font16"><?= selectC('feed','where visible = 1'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('feed','where visible = 1'); ?></div>
           </div>
       </div>      
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Hidden</div>
-              <div class="text-amount ml-auto font16"><?= selectC('feed','where visible = 0'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('feed','where visible = 0'); ?></div>
           </div>
       </div>
       <div class="card card-body text-center" style="display:none">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Videos</div>
-              <div class="text-amount ml-auto font16"><?= selectC('feed','where post_type = "video"'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('feed','where post_type = "video"'); ?></div>
           </div>
       </div>
       <div class="card card-body text-center" style="display:none">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Photos</div>
-              <div class="text-amount ml-auto font16"><?= selectC('feed','where post_type = "image"'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('feed','where post_type = "image"'); ?></div>
           </div>
       </div>  
 
       <div class="card card-body text-center" style="display:none">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Audios</div>
-              <div class="text-amount ml-auto font16"><?= selectC('feed','where post_type = "audio"'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('feed','where post_type = "audio"'); ?></div>
           </div>
       </div>
       <div class="card card-body text-center" style="display:none">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Text</div>
-              <div class="text-amount ml-auto font16"><?= selectC('feed','where post_type = "text"'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('feed','where post_type = "text"'); ?></div>
           </div>
       </div>                                                                
   </div>

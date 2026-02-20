@@ -10,7 +10,7 @@
         foreach($arr as $entry){ $q = $entry['question']; ?>
         <?php $a = userProfileAnswer($sm['edit']['id'],$entry['id']); ?>
           <li class="list-group-item">
-              <strong class="text-muted"><?= $entry['question'];?></strong><br>
+              <strong class="text-muted"><?php echo  $entry['question'];?></strong><br>
           <?php
             if($entry['method'] == 'text'){
               echo '<input onchange="updateProfileQuestionAnswer(this)" data-answer="edit" data-profile-question-answer="'.$entry['id'].'" data-question-method="text"  type="" class="form-control" value="'.$a.'"  style="top:-10px;font-size:1.0rem" />
@@ -63,9 +63,9 @@
           $visible = '';
         } ?> 
                           
-          <div class="container-grid-interest box-shadow allInterests interestsBorderRadius <?= $visible; ?>" onclick="selectInterest(this);" data-select-interest-id="<?= $val['id']; ?>" style="background-image:url('<?= $val['icon']; ?>')" data-select="<?= $select; ?>" data-icon="<?= $val['icon']; ?>" data-name="<?= $val['name']; ?>" data-checked="<?= $select; ?>" data-id="<?= $val['id']; ?>">                         
+          <div class="container-grid-interest box-shadow allInterests interestsBorderRadius <?php echo  $visible; ?>" onclick="selectInterest(this);" data-select-interest-id="<?php echo  $val['id']; ?>" style="background-image:url('<?php echo  $val['icon']; ?>')" data-select="<?php echo  $select; ?>" data-icon="<?php echo  $val['icon']; ?>" data-name="<?php echo  $val['name']; ?>" data-checked="<?php echo  $select; ?>" data-id="<?php echo  $val['id']; ?>">
             <div class="interestName">
-              <span class="text-shadow"><?= $val['name']; ?></span>
+              <span class="text-shadow"><?php echo  $val['name']; ?></span>
             </div>
           </div>
         

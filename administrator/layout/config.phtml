@@ -40,32 +40,32 @@
 
       ?>
         <div class="col-lg-4 card-body bg-light" >
-            <p><strong class="headings-color"><?= $title; ?></strong></p>
-            <p class="text-muted"><?= $desc; ?></p>
+            <p><strong class="headings-color"><?php echo  $title; ?></strong></p>
+            <p class="text-muted"><?php echo  $desc; ?></p>
         </div>
         <div class="col-lg-8 card-form__body card-body d-flex align-items-center bg-white" >
             <div class="flex">
-                <label for=""><?= $title; ?></label><br>
+                <label for=""><?php echo  $title; ?></label><br>
 
                 <!-- FROM TYPE TEXT,NUMBER -->
                 <?php if($type == 'text'){ ?>   
-                  <input type="<?= $type; ?>" data-config-update="<?= $c; ?>" class="form-control" data-config-type="<?=$type; ?>" placeholder="" value="<?= $c; ?>">
+                  <input type="<?php echo  $type; ?>" data-config-update="<?php echo  $c; ?>" class="form-control" data-config-type="<?php echo $type; ?>" placeholder="" value="<?php echo  $c; ?>">
                 <?php } ?>   
 
 
                 <!-- FROM TYPE BOOLEAN -->
                 <?php if($type == 'boolean'){ ?> 
                   <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-                      <input <?=$checked; ?> type="checkbox" id="<?= $c; ?>" data-config-type="<?=$type; ?>" data-config-update="<?= $c; ?>" class="custom-control-input">
-                      <label class="custom-control-label" for="<?= $c; ?>"></label>
+                      <input <?php echo $checked; ?> type="checkbox" id="<?php echo  $c; ?>" data-config-type="<?php echo $type; ?>" data-config-update="<?php echo  $c; ?>" class="custom-control-input">
+                      <label class="custom-control-label" for="<?php echo  $c; ?>"></label>
                   </div>
-                  <label for="<?= $c; ?>" class="mb-0"></label>
+                  <label for="<?php echo  $c; ?>" class="mb-0"></label>
                 <?php } ?>
 
 
                 <!-- FROM TYPE SELECT -->
                 <?php if($type == 'select'){ ?>
-                  <select id="<?= $c; ?>" data-config-type="<?=$c; ?>" data-config-update="<?= $c; ?>"  class="form-control">
+                  <select id="<?php echo  $c; ?>" data-config-type="<?php echo $c; ?>" data-config-update="<?php echo  $c; ?>"  class="form-control">
                   <?php                
                     //select options
                   ?> 

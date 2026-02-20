@@ -73,10 +73,10 @@ if(isset($_GET['d'])){
                   $sex = getGenderSex($entry['id']); $name = $entry['text']; ?>
                   <tr style="margin-top: 10px;">
                     <td style="display: inline-table;width: 35%">
-                      <input class="form-control" id="genderName<?= $entry['id'];?>" value="<?= $entry['text'];?>" name="site_gender_name" style="width: 85%"/>
+                      <input class="form-control" id="genderName<?php echo  $entry['id'];?>" value="<?php echo  $entry['text'];?>" name="site_gender_name" style="width: 85%"/>
                     </td> 
                     <td style="display: inline-table;width: 35%">
-                      <select class="form-control" id="genderSex<?= $entry['id'];?>" style="width: 85%" name="site_gender_sex">
+                      <select class="form-control" id="genderSex<?php echo  $entry['id'];?>" style="width: 85%" name="site_gender_sex">
                         <?php if($sex == 1){
                           echo '<option value="1"  selected>Male</option>';
                           echo '<option value="2">Female</option>';
@@ -87,14 +87,14 @@ if(isset($_GET['d'])){
                       </select> 
                     </td>                                        
                     <td style="display: inline-table;width: 20%">
-                      <a href="#" onClick="uGender(<?= $entry['id'];?>)" class="btn btn-light" style="display: inline-table;margin-right: 3px"><i class="material-icons">update</i></a>                                
-                      <a href="#" onClick="dGender(<?= $entry['id'];?>)" class="btn btn-danger" style="display: inline-table;"><i class="material-icons">delete</i></a>                      
+                      <a href="#" onClick="uGender(<?php echo  $entry['id'];?>)" class="btn btn-light" style="display: inline-table;margin-right: 3px"><i class="material-icons">update</i></a>
+                      <a href="#" onClick="dGender(<?php echo  $entry['id'];?>)" class="btn btn-danger" style="display: inline-table;"><i class="material-icons">delete</i></a>
                     </td>                       
                   </tr> 
                 <?php } ?>
                    
                   <tr style="margin-top: 10px;">
-                    <input class="form-control" type="hidden" disabled value="<?= $all;?>" name="site_gender_id" style="display: none"  />
+                    <input class="form-control" type="hidden" disabled value="<?php echo  $all;?>" name="site_gender_id" style="display: none"  />
                     <td style="display: inline-table;width: 35%">
                       <input class="form-control" id="genderName" placeholder="Add new gender or niche" value="" name="site_gender_name" style="width: 85%"/>
                     </td> 
@@ -127,7 +127,7 @@ if(isset($_GET['d'])){
 <script>
 document.getElementById("addGender").addEventListener("click", addGender);
 function addGender(){
-  var id = <?= $all; ?>;
+  var id = <?php echo  $all; ?>;
   var name = $('#genderName').val();
   var sex = $('#genderSex').val();
   window.location.href = 'index.php?page=admin&p=genders&a='+id+'&name='+name+'&sex='+sex;

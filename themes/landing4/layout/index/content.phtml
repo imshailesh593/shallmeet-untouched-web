@@ -13,7 +13,7 @@
     <meta name="description" content="<?php echo $sm['seoLang']['landing'][2]['text']; ?>">
     <meta name="keywords" content="<?php echo $sm['seoLang']['landing'][3]['text']; ?>">
     <meta name="author" content="<?php echo $sm['config']['name']; ?>">
-    <link rel="icon" type="image/png" href="<?= $sm['landing']['favicon']['val']; ?>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?php echo  $sm['landing']['favicon']['val']; ?>" sizes="32x32">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript">
         function inIframe() {
@@ -31,7 +31,7 @@
                 x = w.innerWidth || e.clientWidth || g.clientWidth,
                 y = w.innerHeight || e.clientHeight || g.clientHeight;
             if (x <= 768) {
-                window.location = '<?= $sm['config']['site_url']; ?>';
+                window.location = '<?php echo  $sm['config']['site_url']; ?>';
             }
         }
         <?php if ($sm['landing']['show_mobile']['val'] == 'No') { ?>
@@ -45,7 +45,7 @@
                         x = w.innerWidth || e.clientWidth || g.clientWidth,
                         y = w.innerHeight || e.clientHeight || g.clientHeight;
                     if (x <= 768) {
-                        window.location = '<?= $sm['config']['site_url']; ?>?page=login';
+                        window.location = '<?php echo  $sm['config']['site_url']; ?>?page=login';
                     }
                 };
             }
@@ -54,13 +54,13 @@
     <?php if (!empty($sm['plugins']['analytics']['ga_id'])) { ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async
-            src="https://www.googletagmanager.com/gtag/js?id=<?= $sm['plugins']['analytics']['ga_id']; ?>"></script>
+            src="https://www.googletagmanager.com/gtag/js?id=<?php echo  $sm['plugins']['analytics']['ga_id']; ?>"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
 
-            gtag('config', '<?= $sm['plugins']['analytics']['ga_id']; ?>');
+            gtag('config', '<?php echo  $sm['plugins']['analytics']['ga_id']; ?>');
         </script>
     <?php } ?>
     <style data-llama-editable="true" data-llama-id="5">
@@ -114,9 +114,9 @@
         data-llama-editable="true" data-llama-id="7">
         <div class="flex items-center h-full space-x-6" data-llama-editable="true" data-llama-id="8">
             <a class="flex items-center h-full" data-llama-editable="true" data-llama-id="9"
-                href="<?= $sm['config']['site_url']; ?>">
+                href="<?php echo  $sm['config']['site_url']; ?>">
                 <img alt="Logo" class="w-32 h-16 object-contain" data-llama-editable="true" data-llama-id="10"
-                    src="<?= $sm['landing']['logo']['val']; ?>" />
+                    src="<?php echo  $sm['landing']['logo']['val']; ?>" />
             </a>
             <nav class="hidden md:flex space-x-6 items-center h-full" data-llama-editable="true" data-llama-id="11">
                 <a class="hover:text-pink-500" data-llama-editable="true" data-llama-id="12" href="#">Products</a>
@@ -140,15 +140,15 @@
                 <span data-llama-editable="true" data-llama-id="22">Language</span>
             </button>
             <a class="bg-white text-[#FF6B81] text-lg px-6 py-3 rounded-full hover:opacity-90"
-                data-llama-editable="true" data-llama-id="23" href="<?= $sm['config']['site_url']; ?>?page=login">
-                <?= $sm['lang'][1]['text']; ?>
+                data-llama-editable="true" data-llama-id="23" href="<?php echo  $sm['config']['site_url']; ?>?page=login">
+                <?php echo  $sm['lang'][1]['text']; ?>
             </a>
         </div>
     </header>
     <!-- Hero Section -->
     <section class="relative h-screen bg-cover bg-center bg-no-repeat" data-llama-editable="true" data-llama-id="24">
         <video playsinline autoplay muted loop data-video class="absolute inset-0 w-full h-full object-cover z-0">
-            <source src="<?= $sm['landing']['bg_video']['val']; ?>" type="video/mp4">
+            <source src="<?php echo  $sm['landing']['bg_video']['val']; ?>" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-black opacity-60 z-10" data-llama-editable="true" data-llama-id="25"></div>
         <div class="relative z-20 flex flex-col items-center justify-center text-center text-white h-full px-4"
@@ -157,7 +157,7 @@
             </h1>
             <button class="bg-pink-500 hover:bg-pink-600 text-white text-lg px-6 py-3 rounded-full"
                 data-llama-editable="true" data-llama-id="28"
-                onclick="window.location.href='<?= $sm['config']['site_url']; ?>?page=register';">
+                onclick="window.location.href='<?php echo  $sm['config']['site_url']; ?>?page=register';">
                 Create account
             </button>
         </div>

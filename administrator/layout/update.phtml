@@ -39,7 +39,7 @@ $date2 = date('m/d/Y', time());
         <div class="col-sm-12">
           <div class="form-group">
             <label for="filter_name" style="width: 74%;font-size: 14px;color:#fff">Current installed software version
-              <?= $sm['settings']['currentVersion']; ?> </label>
+              <?php echo  $sm['settings']['currentVersion']; ?> </label>
             <select id="filter_updates" class="custom-select" style="width: 25%;"
               onchange="filterSoftwareUpdates(this.value)">
               <option value="all">All Versions</option>
@@ -75,7 +75,7 @@ $date2 = date('m/d/Y', time());
         $('#updateSoftware').show();
         $('#updateSoftwareVersion').text(softwareUpdateVersion);
         $('#updateSoftware').click(function (e) {
-          window.location.href = '<?= $sm['config']['site_url']; ?>update.php?version=' + softwareUpdateVersion;
+          window.location.href = '<?php echo  $sm['config']['site_url']; ?>update.php?version=' + softwareUpdateVersion;
         });
       }
     });

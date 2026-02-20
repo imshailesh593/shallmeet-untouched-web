@@ -32,8 +32,8 @@ $currentTheme = getDataArray('theme_preset',$filter);
                     <p class="text-muted">This is the current visible landing design.</p> 
                 </div>
                 <div class="col-lg-9 card-form__body card card-form card-body" style="padding: 25px">
-                    <h2><strong style="font-size: 22px;color: #fff"><?= $sm['config']['name']; ?> landing theme</strong></h2>
-                    <p class="text-muted">Preset: <strong style="color: #fff"><?= $currentTheme['preset_alias'];?></strong></p>
+                    <h2><strong style="font-size: 22px;color: #fff"><?php echo  $sm['config']['name']; ?> landing theme</strong></h2>
+                    <p class="text-muted">Preset: <strong style="color: #fff"><?php echo  $currentTheme['preset_alias'];?></strong></p>
 
                     <div style="position: absolute;right: 20px;top: 25px;width: 50%;height: 50px">
                         <div class="dropdown ml-auto">
@@ -41,25 +41,25 @@ $currentTheme = getDataArray('theme_preset',$filter);
                                 <i class="material-icons">more_vert</i>
                             </a>
                             <div class="dropdown-menu " style="font-size: 13px;">
-                                <a class="dropdown-item" href="<?=$sm['config']['site_url'];?>index.php?landing=<?= $currentTheme['theme']; ?>&landingPreset=<?= $currentTheme['preset']; ?>" target="_blank">
+                                <a class="dropdown-item" href="<?php echo $sm['config']['site_url'];?>index.php?landing=<?php echo  $currentTheme['theme']; ?>&landingPreset=<?php echo  $currentTheme['preset']; ?>" target="_blank">
                                   <strong>Live demo</strong>
                                 </a>  
                                 <div class="dropdown-divider"></div>                            
-                                <a class="dropdown-item" href="javascript:;" data-edit-preset-action="duplicate" data-edit-preset="<?= $currentTheme['preset']; ?>" data-edit-preset-alias="<?= $currentTheme['preset_alias']; ?>">Duplicate</a>
+                                <a class="dropdown-item" href="javascript:;" data-edit-preset-action="duplicate" data-edit-preset="<?php echo  $currentTheme['preset']; ?>" data-edit-preset-alias="<?php echo  $currentTheme['preset_alias']; ?>">Duplicate</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:;" data-edit-preset-action="rename" data-edit-preset="<?= $currentTheme['preset']; ?>" data-edit-preset-alias="<?= $currentTheme['preset_alias']; ?>">Rename</a>
+                                <a class="dropdown-item" href="javascript:;" data-edit-preset-action="rename" data-edit-preset="<?php echo  $currentTheme['preset']; ?>" data-edit-preset-alias="<?php echo  $currentTheme['preset_alias']; ?>">Rename</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item"  href="javascript:;" data-export-preset-json-name="<?= $currentTheme['preset_alias']; ?>" data-export-preset-json="<?= $currentTheme['preset']; ?>">Export JSON file</a>                               
+                                <a class="dropdown-item"  href="javascript:;" data-export-preset-json-name="<?php echo  $currentTheme['preset_alias']; ?>" data-export-preset-json="<?php echo  $currentTheme['preset']; ?>">Export JSON file</a>
                             </div>
                         </div>
-                        <a href="<?= $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?= $sm['settings']['landingTheme'];?>&preset=<?= $sm['settings']['landingThemePreset'];?>" target="_blank" class="btn btn-white ml-3" style="width: auto;float: right;background: #4b367c;color: #fff"><i class="material-icons" style="color: #fff">view_compact</i> Customize</a>                                                                   
+                        <a href="<?php echo  $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?php echo  $sm['settings']['landingTheme'];?>&preset=<?php echo  $sm['settings']['landingThemePreset'];?>" target="_blank" class="btn btn-white ml-3" style="width: auto;float: right;background: #4b367c;color: #fff"><i class="material-icons" style="color: #fff">view_compact</i> Customize</a>
                     </div>
 
                    
                      <div id="iframe-wrapper" >
                       <iframe 
                         id="iframe"
-                        src="<?= $sm['config']['site_url']; ?>index.php?landing=<?= $sm['settings']['landingTheme'];?>&landingPreset=<?= $sm['settings']['landingThemePreset'];?>" 
+                        src="<?php echo  $sm['config']['site_url']; ?>index.php?landing=<?php echo  $sm['settings']['landingTheme'];?>&landingPreset=<?php echo  $sm['settings']['landingThemePreset'];?>"
                         frameborder="0"
                         scrolling="yes" style="display: none"
                       ></iframe>
@@ -99,16 +99,16 @@ $currentTheme = getDataArray('theme_preset',$filter);
                   <?php if($landing['purchased'] == 0){ ?> 
                   <div style="position: absolute;width: 100%;height: 100%;background:rgba(0,0,0,.4);z-index: 9;"></div>
                   <?php } ?> 
-                  <img src="<?= $landing['screenshot']; ?>">
+                  <img src="<?php echo  $landing['screenshot']; ?>">
                     
                 </div>
-                    <span class="badge badge-light" style="position:absolute;z-index:9;top:15px;left:15px;float: right;"><?= $landing['name']; ?></span>                 
+                    <span class="badge badge-light" style="position:absolute;z-index:9;top:15px;left:15px;float: right;"><?php echo  $landing['name']; ?></span>
                   <?php if($landing['purchased'] == 1){ ?> 
                     <span class="badge badge-success" style="position:absolute;z-index:9;bottom:15px;left:15px;float: right;">Installed</span> 
                   <?php } else { ?>
-                      <a href="https://lamatt.serv00.net/purchase.php?landing=<?= $landing['folder']; ?>" target="_blank" class="btn btn-warning box-shadow" style="position:absolute;z-index:9;bottom:15px;right:125px;float: right;">
+                      <a href="https://lamatt.serv00.net/purchase.php?landing=<?php echo  $landing['folder']; ?>" target="_blank" class="btn btn-warning box-shadow" style="position:absolute;z-index:9;bottom:15px;right:125px;float: right;">
                         Purchase now</a>
-                      <a href="https://lamatt.serv00.net/index.php?landing=<?= $landing['folder']; ?>" target="_blank" class="btn btn-light box-shadow" style="position:absolute;z-index:9;bottom:15px;right:15px;float: right;">
+                      <a href="https://lamatt.serv00.net/index.php?landing=<?php echo  $landing['folder']; ?>" target="_blank" class="btn btn-light box-shadow" style="position:absolute;z-index:9;bottom:15px;right:15px;float: right;">
                         Live demo</a>                                             
                   <?php } ?>                                      
               </div> 
@@ -165,11 +165,11 @@ $currentTheme = getDataArray('theme_preset',$filter);
           $presets = getArray('theme_preset',$filter,'theme_modification DESC');
           $i=0; 
           foreach ($presets as $p) { ?>
-          <div class="row align-items-center" data-preset-row="<?= $p['preset']; ?>" style="padding-left: 15px;">
+          <div class="row align-items-center" data-preset-row="<?php echo  $p['preset']; ?>" style="padding-left: 15px;">
               <div class="col-auto" style="width: 30%">
                   <div class="d-flex align-items-center">
-                      <a href="<?= $sm['config']['site_url']; ?>index.php?landing=<?= $p['theme']; ?>&landingPreset=<?= $p['preset']; ?>" target="_blank" class="text-body">
-                        <strong class="text-15pt mr-2" data-preset-alias="<?= $p['preset']; ?>"><?= $p['preset_alias']; ?></strong>
+                      <a href="<?php echo  $sm['config']['site_url']; ?>index.php?landing=<?php echo  $p['theme']; ?>&landingPreset=<?php echo  $p['preset']; ?>" target="_blank" class="text-body">
+                        <strong class="text-15pt mr-2" data-preset-alias="<?php echo  $p['preset']; ?>"><?php echo  $p['preset_alias']; ?></strong>
                       </a>
                       <?php if($sm['settings']['landingThemePreset'] == $p['preset']){ ?> 
                         <span class="badge badge-success" style="float: right;">Live</span> 
@@ -178,11 +178,11 @@ $currentTheme = getDataArray('theme_preset',$filter);
               </div>
               <div class="col-auto" style="width: 20%">
                   <div class="d-flex align-items-center">
-                      <span class="text-body"><strong class="text-15pt mr-2"><?= $p['preset_base']; ?></strong></span>
+                      <span class="text-body"><strong class="text-15pt mr-2"><?php echo  $p['preset_base']; ?></strong></span>
                   </div>
               </div>                
               <div class="col-auto text-left" style="width: 15%;padding-top: 15px;padding-left: 10px">
-                  <p class="nunito" style="color: #888;font-size: 12px;" data-preset-last-update="<?= $p['preset']; ?>"><?= time_elapsed_string($p['theme_modification']); ?></p>
+                  <p class="nunito" style="color: #888;font-size: 12px;" data-preset-last-update="<?php echo  $p['preset']; ?>"><?php echo  time_elapsed_string($p['theme_modification']); ?></p>
               </div>                                              
               <div class="col-auto text-center" style="width: 33%;right: 40px;float: right;">
                   <div class="dropdown ml-auto presetsDropdown">
@@ -190,19 +190,19 @@ $currentTheme = getDataArray('theme_preset',$filter);
                           <i class="material-icons">more_vert</i>
                       </a>
                       <div class="dropdown-menu" style="font-size: 13px;">
-                          <a class="dropdown-item" href="<?= $sm['config']['site_url']; ?>index.php?landing=<?= $p['theme']; ?>&landingPreset=<?= $p['preset']; ?>" target="_blank">
+                          <a class="dropdown-item" href="<?php echo  $sm['config']['site_url']; ?>index.php?landing=<?php echo  $p['theme']; ?>&landingPreset=<?php echo  $p['preset']; ?>" target="_blank">
                             <strong>Live demo</strong>
                           </a>
                           <div class="dropdown-divider"></div>                          
-                          <a class="dropdown-item" href="<?= $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?= $p['theme'];?>&preset=<?= $p['preset']; ?>" target="_blank" style="color: #4b367c;">
+                          <a class="dropdown-item" href="<?php echo  $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?php echo  $p['theme'];?>&preset=<?php echo  $p['preset']; ?>" target="_blank" style="color: #4b367c;">
                             <strong>Edit preset</strong>
                           </a>
                           <div class="dropdown-divider"></div>                                                     
-                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="duplicate" data-edit-preset="<?= $p['preset']; ?>" data-edit-preset-alias="<?= $p['preset_alias']; ?>">Duplicate</a>
+                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="duplicate" data-edit-preset="<?php echo  $p['preset']; ?>" data-edit-preset-alias="<?php echo  $p['preset_alias']; ?>">Duplicate</a>
 
-                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="rename" data-edit-preset="<?= $p['preset']; ?>" data-edit-preset-alias="<?= $p['preset_alias']; ?>">Rename</a>
+                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="rename" data-edit-preset="<?php echo  $p['preset']; ?>" data-edit-preset-alias="<?php echo  $p['preset_alias']; ?>">Rename</a>
 
-                          <a class="dropdown-item" href="javascript:;" data-export-preset-json-name="<?= $p['preset_alias']; ?>" data-export-preset-json="<?= $p['preset']; ?>">Export JSON file</a>
+                          <a class="dropdown-item" href="javascript:;" data-export-preset-json-name="<?php echo  $p['preset_alias']; ?>" data-export-preset-json="<?php echo  $p['preset']; ?>">Export JSON file</a>
 
                           <?php if($sm['settings']['landingThemePreset'] == $p['preset']){ ?>
                           <div class="dropdown-divider"></div>
@@ -210,13 +210,13 @@ $currentTheme = getDataArray('theme_preset',$filter);
                           <?php } ?>                      
                           <?php if($sm['settings']['landingThemePreset'] != $p['preset']){ ?> 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:;" data-edit-preset-action="delete" data-edit-preset="<?= $p['preset']; ?>" data-edit-preset-alias="<?= $p['preset_alias']; ?>">Delete</a>   
+                            <a class="dropdown-item" href="javascript:;" data-edit-preset-action="delete" data-edit-preset="<?php echo  $p['preset']; ?>" data-edit-preset-alias="<?php echo  $p['preset_alias']; ?>">Delete</a>
                           <?php } ?>
 
                       </div>
                   </div>                
                                   
-                  <a href="<?= $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?= $p['theme'];?>&preset=<?= $p['preset']; ?>" target="_blank" class="btn btn-light" style="color: #4b367c;float: right;"><i class="material-icons">brush</i></a>                                                 
+                  <a href="<?php echo  $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?php echo  $p['theme'];?>&preset=<?php echo  $p['preset']; ?>" target="_blank" class="btn btn-light" style="color: #4b367c;float: right;"><i class="material-icons">brush</i></a>
               </div>
           </div>
         <?php } ?>
@@ -252,7 +252,7 @@ $currentTheme = getDataArray('theme_preset',$filter);
 <script>
   /*
   var tadiv = document.getElementById('loadThemes');
-  var landingThemes = <?= json_encode(getArray('config_themes','WHERE type = 2','id DESC')); ?>;
+  var landingThemes = <?php echo  json_encode(getArray('config_themes','WHERE type = 2','id DESC')); ?>;
   var themeShow = 1;
   landingThemes.forEach(function(el) {
       

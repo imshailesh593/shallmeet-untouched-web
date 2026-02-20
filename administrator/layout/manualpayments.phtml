@@ -16,7 +16,7 @@
         <i class="material-icons mr-1">attach_money</i> Create Custom Payment
      </button>    
      <button type="button" class="btn btn-light" onclick="goTo('revieworders','','Premium Plugins');" style="float:right;margin-right: 25px;">
-       <?= selectC('orders','where order_status = "pending" and order_custom = 1'); ?> order proof for review
+       <?php echo  selectC('orders','where order_status = "pending" and order_custom = 1'); ?> order proof for review
      </button>            
   </div>
   <div class="card card-form" id="createCustomPayment" style="display:none">
@@ -89,7 +89,7 @@
                                   }
                               }
                           ?>
-                            <option value="<?= $val['country_code']; ?>"><?= $val['country_code']; ?></option>
+                            <option value="<?php echo  $val['country_code']; ?>"><?php echo  $val['country_code']; ?></option>
                           <?php } ?>                                            
                       </select>
                       <small class="form-text text-muted" style="font-size: 0.64rem;">Make this payment visible ONLY to clients from the selected country code.</small>
@@ -266,7 +266,7 @@
         $('#createCustomPayment').toggle();        
         $.ajax({ 
             type: "POST", 
-            url: "<?=$sm['config']['site_url']; ?>requests/admin.php",
+            url: "<?php echo $sm['config']['site_url']; ?>requests/admin.php",
             data: $(this).serialize(),
             dataType:'JSON',
             success: function(response){

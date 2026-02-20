@@ -24,9 +24,9 @@
                 <div class="col-lg-5 card-body" style="padding: 5px">
                     <p style="height: 40px;line-height: 40px;margin: 0;">
                         <strong class="headings-color" style="font-size: 16px;padding-left: 20px;">
-                            <?= $lang['name']; ?>
+                            <?php echo  $lang['name']; ?>
                         </strong>
-                        <small><span class="badge badge-light"><?= $lang['prefix']; ?></span></small>
+                        <small><span class="badge badge-light"><?php echo  $lang['prefix']; ?></span></small>
                         <?php if($lang['visible'] == 1){
                             $visible = 'block';
                             $novisible = 'none';
@@ -36,15 +36,15 @@
                             $novisible = 'block';
                             $checked = '';
                         } ?>
-                        <label data-lang-visibile="<?= $lang['id']; ?>" style="position: absolute;right: 10px;top: 5px;display: <?= $visible; ?>">
+                        <label data-lang-visibile="<?php echo  $lang['id']; ?>" style="position: absolute;right: 10px;top: 5px;display: <?php echo  $visible; ?>">
                             <span class="badge badge-success">Visible</span>
                         </label>
-                        <label data-lang-novisibile="<?= $lang['id']; ?>" style="position: absolute;right: 10px;top: 5px;display: <?= $novisible; ?>">
+                        <label data-lang-novisibile="<?php echo  $lang['id']; ?>" style="position: absolute;right: 10px;top: 5px;display: <?php echo  $novisible; ?>">
                             <span class="badge badge-light">No visible</span>
                         </label>  
                         <?php if(!empty($lang['translated'])){ ?>
                         <label style="position: absolute;right: 90px;top: 5px;display: block">
-                            <span class="badge badge-white">Translation: <?= $lang['translated']; ?></span>
+                            <span class="badge badge-white">Translation: <?php echo  $lang['translated']; ?></span>
                         </label> 
                         <?php } ?>                                           
                     </p>              
@@ -52,60 +52,60 @@
                 <div class="col-lg-7 card-form__body card-body d-flex align-items-center" style="padding: 5px">
                     <div class="flex" style="padding-left: 20px;">
                         <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-                            <input <?= $checked; ?> onchange="updateLanguageVisible(this.checked,<?= $lang['id']; ?>);"  type="checkbox" id="lang<?= $lang['id']; ?>" class="custom-control-input">
-                            <label class="custom-control-label" for="lang<?= $lang['id']; ?>">Yes</label>
+                            <input <?php echo  $checked; ?> onchange="updateLanguageVisible(this.checked,<?php echo  $lang['id']; ?>);"  type="checkbox" id="lang<?php echo  $lang['id']; ?>" class="custom-control-input">
+                            <label class="custom-control-label" for="lang<?php echo  $lang['id']; ?>">Yes</label>
                         </div>
                     </div>
                     <div class="flex">
-                       <button type="button" class="btn btn-light" onclick="exportLanguage(<?= $lang['id']; ?>,'<?= $lang['name']; ?>','<?= $lang['prefix']; ?>')">
+                       <button type="button" class="btn btn-light" onclick="exportLanguage(<?php echo  $lang['id']; ?>,'<?php echo  $lang['name']; ?>','<?php echo  $lang['prefix']; ?>')">
                           <i class="material-icons mr-1">import_export</i> Export JSON
                        </button> 
                     </div>
                     <div class="flex">
                       <div class="dropdown" id="editLangDropdown">
                           <button class="btn btn-light" data-toggle="dropdown" data-caret="false">
-                                <i class="material-icons mr-1">language</i> Edit <?= $lang['name']; ?>
+                                <i class="material-icons mr-1">language</i> Edit <?php echo  $lang['name']; ?>
                           </button> 
                           <div class="dropdown-menu dropdown-menu-right">
                               <a class="dropdown-item" href="javascript:;" 
-                                onclick="goTo('editLanguage',<?= $lang['id']; ?>,'site_lang');" 
+                                onclick="goTo('editLanguage',<?php echo  $lang['id']; ?>,'site_lang');"
                                     style="font-size: 13px;">
                                 Edit Website language
                               </a> 
                                <a class="dropdown-item" href="javascript:;" 
-                                onclick="goTo('editLanguage',<?= $lang['id']; ?>,'app_lang');" 
+                                onclick="goTo('editLanguage',<?php echo  $lang['id']; ?>,'app_lang');"
                                     style="font-size: 13px;">
                                 Edit Mobile language
                               </a>
                                <a class="dropdown-item" href="javascript:;" 
-                                onclick="goTo('editLanguage',<?= $lang['id']; ?>,'landing_lang');" 
+                                onclick="goTo('editLanguage',<?php echo  $lang['id']; ?>,'landing_lang');"
                                     style="font-size: 13px;">
-                                Edit Landing <?= $sm['settings']['landingTheme']; ?> Preset: <?= $sm['settings']['landingThemePreset']; ?>
+                                Edit Landing <?php echo  $sm['settings']['landingTheme']; ?> Preset: <?php echo  $sm['settings']['landingThemePreset']; ?>
                               </a>                                                         
                                <a class="dropdown-item" href="javascript:;" 
-                                onclick="goTo('editLanguage',<?= $lang['id']; ?>,'email_lang');" 
+                                onclick="goTo('editLanguage',<?php echo  $lang['id']; ?>,'email_lang');"
                                     style="font-size: 13px;">
                                 Edit Email language
                               </a>  
                                <a class="dropdown-item" href="javascript:;" 
-                                onclick="goTo('editLanguage',<?= $lang['id']; ?>,'gender');" 
+                                onclick="goTo('editLanguage',<?php echo  $lang['id']; ?>,'gender');"
                                     style="font-size: 13px;">
                                 Edit Gender language
                               </a>
                                <a class="dropdown-item" href="javascript:;" 
-                                onclick="goTo('editLanguage',<?= $lang['id']; ?>,'questions');" 
+                                onclick="goTo('editLanguage',<?php echo  $lang['id']; ?>,'questions');"
                                     style="font-size: 13px;">
                                 Edit Profile questions language
                               </a>
                                <a class="dropdown-item" href="javascript:;" 
-                                onclick="goTo('editLanguage',<?= $lang['id']; ?>,'seo_lang');" 
+                                onclick="goTo('editLanguage',<?php echo  $lang['id']; ?>,'seo_lang');"
                                     style="font-size: 13px;">
                                 Edit Pages Seo Language
                               </a>                            
                               <?php if($lang['id'] != 1){ ?>  
                               <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="javascript:;" onclick="deleteLanguage(<?= $lang['id']; ?>);" style="font-size: 13px;color: #b50000">
-                                Delete <?= $lang['name']; ?>
+                              <a class="dropdown-item" href="javascript:;" onclick="deleteLanguage(<?php echo  $lang['id']; ?>);" style="font-size: 13px;color: #b50000">
+                                Delete <?php echo  $lang['name']; ?>
                               </a>   
                               <?php } ?>
                           </div>

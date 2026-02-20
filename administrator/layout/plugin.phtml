@@ -32,13 +32,13 @@ $whitelist = array(
               <li class="breadcrumb-item"><a href="#" onclick="goTo('plugin','license','')">License</a></li>
             <?php } else { ?>
               <li class="breadcrumb-item"><a href="#" onclick="goTo('plugins','','')">Plugins</a></li>
-              <li class="breadcrumb-item"><a href="#" onclick="goTo('plugins','','<?= $category; ?>')"><?= $category; ?></a></li>
-              <li class="breadcrumb-item active" aria-current="page"><?= $plugin; ?></li>
+              <li class="breadcrumb-item"><a href="#" onclick="goTo('plugins','','<?php echo  $category; ?>')"><?php echo  $category; ?></a></li>
+              <li class="breadcrumb-item active" aria-current="page"><?php echo  $plugin; ?></li>
             <?php } ?> -->
         </ol>
       </nav>
     </div>
-    <a href="#" class="btn btn-light ml-3" onclick="goTo('plugins','','<?= $category; ?>')"><i
+    <a href="#" class="btn btn-light ml-3" onclick="goTo('plugins','','<?php echo  $category; ?>')"><i
         class="material-icons mr-1">arrow_back</i></a>
   </div>
 
@@ -60,7 +60,7 @@ $whitelist = array(
     <?php if ($b['type'] == 1) { ?>
       <div class="card card-form">
         <div class="card-header card-header-large bg-white d-flex align-items-center">
-          <h4 class="card-header__title flex m-0"><?= $b['title']; ?></h4>
+          <h4 class="card-header__title flex m-0"><?php echo  $b['title']; ?></h4>
           <div></div>
         </div>
         <div class="row no-gutters">
@@ -68,7 +68,7 @@ $whitelist = array(
           <?php if ($b['block'] == 'gifts_general') { ?>
             <div class="col-lg-12 card-form__body card-body d-flex align-items-center bg-white">
               <div class="flex">
-                <div id="giftsContainer" style="display: inline-block;"><?= getGiftsAdmin(); ?></div>
+                <div id="giftsContainer" style="display: inline-block;"><?php echo  getGiftsAdmin(); ?></div>
               </div>
             </div>
           <?php } ?>
@@ -76,7 +76,7 @@ $whitelist = array(
           <?php if ($b['block'] == 'spotlight_users') { ?>
             <div class="col-lg-12 card-form__body card-body d-flex align-items-center bg-white">
               <div class="flex">
-                <div id="giftsContainer" style="display: inline-block;"><?= getSpotlightUsersAdmin(); ?></div>
+                <div id="giftsContainer" style="display: inline-block;"><?php echo  getSpotlightUsersAdmin(); ?></div>
               </div>
             </div>
           <?php } ?>
@@ -85,7 +85,7 @@ $whitelist = array(
             <div class="col-lg-12 card-form__body card-body d-flex align-items-center bg-white">
               <div class="flex">
                 <div id="interestsContainer" style="display: inline-block;">
-                  <?= getInterestsAdmin(); ?>
+                  <?php echo  getInterestsAdmin(); ?>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ $whitelist = array(
             ?>
             <div class="col-lg-4 card-body bg-light">
               <p>
-                <strong class="headings-color"><?= $s['title']; ?></strong>
+                <strong class="headings-color"><?php echo  $s['title']; ?></strong>
               </p>
               <p class="text-muted">
                 <?php if ($s['setting'] == 'rate' && $s['plugin'] == 'withdrawal') {
@@ -153,45 +153,45 @@ $whitelist = array(
 
                 <?php if ($s['docs'] == 1) { ?>
                   <br><br>
-                  <strong>Check <a href="https://lamat.infy.uk/support/docs/<?= $s['plugin']; ?>.html"
-                      target="_blank"><?= $s['title']; ?></a> documentation</strong>
+                  <strong>Check <a href="https://lamat.infy.uk/support/docs/<?php echo  $s['plugin']; ?>.html"
+                      target="_blank"><?php echo  $s['title']; ?></a> documentation</strong>
                 <?php } ?>
               </p>
             </div>
             <div class="col-lg-8 card-form__body card-body d-flex align-items-center bg-white">
               <div class="flex">
-                <label for="<?= $s['setting']; ?>"><?= $s['label']; ?></label><br>
+                <label for="<?php echo  $s['setting']; ?>"><?php echo  $s['label']; ?></label><br>
                 <!-- FROM TYPE TEXT -->
                 <?php if ($s['setting_type'] == 'text') { ?>
-                  <input type="<?= $s['setting_type']; ?>" data-plugin-update="<?= $s['plugin']; ?>"
-                    data-plugin-premium="<?= $s['premium']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-block="<?= $s['block']; ?>" placeholder=""
-                    value="<?= $s['setting_val']; ?>">
+                  <input type="<?php echo  $s['setting_type']; ?>" data-plugin-update="<?php echo  $s['plugin']; ?>"
+                    data-plugin-premium="<?php echo  $s['premium']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-block="<?php echo  $s['block']; ?>" placeholder=""
+                    value="<?php echo  $s['setting_val']; ?>">
                 <?php } ?>
 
                 <?php if ($s['setting_type'] == 'uploadSize') {
                   $MB = $sm['config']['max_upload'] / 1024 / 1024;
                 ?>
-                  <input type="<?= $s['setting_type']; ?>" disabled data-plugin-update="<?= $s['plugin']; ?>"
-                    data-plugin-premium="<?= $s['premium']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-block="<?= $s['block']; ?>" placeholder=""
-                    value="<?= $MB; ?> MB">
+                  <input type="<?php echo  $s['setting_type']; ?>" disabled data-plugin-update="<?php echo  $s['plugin']; ?>"
+                    data-plugin-premium="<?php echo  $s['premium']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-block="<?php echo  $s['block']; ?>" placeholder=""
+                    value="<?php echo  $MB; ?> MB">
                 <?php } ?>
 
                 <!-- FROM TYPE TEXTAREA -->
                 <?php if ($s['setting_type'] == 'textarea') { ?>
-                  <textarea data-plugin-update="<?= $s['plugin']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                    data-plugin-setting="<?= $s['setting']; ?>" class="form-control"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-block="<?= $s['block']; ?>"
-                    rows="9"><?= $s['setting_val']; ?></textarea>
+                  <textarea data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                    data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-block="<?php echo  $s['block']; ?>"
+                    rows="9"><?php echo  $s['setting_val']; ?></textarea>
                 <?php } ?>
 
                 <!-- FROM TYPE NUMBER -->
                 <?php if ($s['setting_type'] == 'number') { ?>
-                  <input type="<?= $s['setting_type']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                    data-plugin-update="<?= $s['plugin']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-block="<?= $s['block']; ?>" placeholder=""
-                    value="<?= $s['setting_val']; ?>" style="width: 30%">
+                  <input type="<?php echo  $s['setting_type']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                    data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-block="<?php echo  $s['block']; ?>" placeholder=""
+                    value="<?php echo  $s['setting_val']; ?>" style="width: 30%">
                 <?php } ?>
 
                 <!-- FROM TYPE BOOLEAN -->
@@ -202,13 +202,13 @@ $whitelist = array(
                   }
                 ?>
                   <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-                    <input <?= $checked; ?> type="checkbox" id="<?= $s['setting']; ?>"
-                      data-plugin-premium="<?= $s['premium']; ?>" data-plugin-type="<?= $s['setting_type']; ?>"
-                      data-plugin-update="<?= $s['plugin']; ?>" data-plugin-block="<?= $s['block']; ?>"
-                      data-plugin-setting="<?= $s['setting']; ?>" class="custom-control-input">
-                    <label class="custom-control-label" for="<?= $s['setting']; ?>"></label>
+                    <input <?php echo  $checked; ?> type="checkbox" id="<?php echo  $s['setting']; ?>"
+                      data-plugin-premium="<?php echo  $s['premium']; ?>" data-plugin-type="<?php echo  $s['setting_type']; ?>"
+                      data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-block="<?php echo  $s['block']; ?>"
+                      data-plugin-setting="<?php echo  $s['setting']; ?>" class="custom-control-input">
+                    <label class="custom-control-label" for="<?php echo  $s['setting']; ?>"></label>
                   </div>
-                  <label for="<?= $s['setting']; ?>" class="mb-0"></label>
+                  <label for="<?php echo  $s['setting']; ?>" class="mb-0"></label>
                 <?php } ?>
 
 
@@ -296,12 +296,12 @@ $whitelist = array(
                     }
                   }
                 ?>
-                  <select id="<?= $s['setting']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-update="<?= $s['plugin']; ?>"
-                    data-plugin-block="<?= $s['block']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control">
+                  <select id="<?php echo  $s['setting']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-update="<?php echo  $s['plugin']; ?>"
+                    data-plugin-block="<?php echo  $s['block']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control">
 
                     <?php if ($s['setting'] == 'popularSearchFilterGender') { ?>
-                      <option value="<?= $byUserCriteria; ?>" <?php if ($byUserCriteria == $val) {
+                      <option value="<?php echo  $byUserCriteria; ?>" <?php if ($byUserCriteria == $val) {
                                                                 echo 'selected';
                                                               } ?>
                         style="color:#000;">By User Criteria</option>
@@ -326,20 +326,20 @@ $whitelist = array(
                         echo '<option value="' . $entry['id'] . '" style="color:#000;">' . $textOnly . ' ' . $entry['text'] . '</option>';
                       } ?>
                     <?php } ?>
-                    <option value="<?= $all; ?>" <?php if ($all == $val) {
+                    <option value="<?php echo  $all; ?>" <?php if ($all == $val) {
                                                     echo 'selected';
                                                   } ?>
-                      style="color:#000;<?= $showAll; ?>">All</option>
+                      style="color:#000;<?php echo  $showAll; ?>">All</option>
                   </select>
                 <?php } ?>
 
                 <!-- FROM TYPE LANGUAGE -->
                 <?php if ($s['setting_type'] == 'language') { ?>
-                  <select id="<?= $s['setting']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-update="<?= $s['plugin']; ?>"
-                    data-plugin-block="<?= $s['block']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control">
-                    <option value="<?= $s['setting_val']; ?>"> <?= getCurrentLang($s['setting_val']); ?> </option>
-                    <?= getSiteLangs($s['setting_val']); ?>
+                  <select id="<?php echo  $s['setting']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-update="<?php echo  $s['plugin']; ?>"
+                    data-plugin-block="<?php echo  $s['block']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control">
+                    <option value="<?php echo  $s['setting_val']; ?>"> <?php echo  getCurrentLang($s['setting_val']); ?> </option>
+                    <?php echo  getSiteLangs($s['setting_val']); ?>
                   </select>
                 <?php } ?>
 
@@ -349,19 +349,19 @@ $whitelist = array(
                     <div class="dz-preview dz-file-preview dz-clickable mr-3">
                       <div class="avatar dz-image-preview"
                         style="position:relative;width: 80px; height: 80px;background: #eee!important;border-radius: 5px;">
-                        <img src="<?= $s['setting_val']; ?>" id="gesturePreview"
+                        <img src="<?php echo  $s['setting_val']; ?>" id="gesturePreview"
                           style="position: absolute;top: 0;bottom: 0;margin: auto;width: 80px;border-radius: 5px;">
                       </div>
                     </div>
                     <div class="media-body">
                       <button class="btn btn-sm btn-primary dz-clickable" style="padding: 10px" id="gestureBtn"
-                        data-uptype="<?= $s['setting_type']; ?>" onclick="uploadImage(this)">Choose
-                        <?= $s['setting_type']; ?></button>
+                        data-uptype="<?php echo  $s['setting_type']; ?>" onclick="uploadImage(this)">Choose
+                        <?php echo  $s['setting_type']; ?></button>
                     </div>
-                    <input type="hidden" id="gesture" data-plugin-update="<?= $s['plugin']; ?>"
-                      data-plugin-premium="<?= $s['premium']; ?>" data-plugin-setting="<?= $s['setting']; ?>"
-                      class="form-control" data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-block="<?= $s['block']; ?>"
-                      placeholder="" value="<?= $s['setting_val']; ?>">
+                    <input type="hidden" id="gesture" data-plugin-update="<?php echo  $s['plugin']; ?>"
+                      data-plugin-premium="<?php echo  $s['premium']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>"
+                      class="form-control" data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-block="<?php echo  $s['block']; ?>"
+                      placeholder="" value="<?php echo  $s['setting_val']; ?>">
                   </div>
                 <?php } ?>
 
@@ -372,16 +372,16 @@ $whitelist = array(
                     <div class="d-flex align-items-top mb-2">
                       <div class="sidebar-heading m-0 p-0 flex text-body">Api limit</div>
                       <div class="sidebar-heading m-0 p-0 text-body font-weight-bold">
-                        <span style="margin-right: 25px"><?= $sm['settings']['fakeUserUsage']; ?> /
-                          <?= $sm['settings']['fakeUserLimit']; ?> LIMIT</span>
-                        <a href="lamatt.serv00.net/buyfakeusers.php?license=<?= $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
+                        <span style="margin-right: 25px"><?php echo  $sm['settings']['fakeUserUsage']; ?> /
+                          <?php echo  $sm['settings']['fakeUserLimit']; ?> LIMIT</span>
+                        <a href="lamatt.serv00.net/buyfakeusers.php?license=<?php echo  $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
                           target="_blank">Upgrade limit</a>
 
                       </div>
                     </div>
                     <div class="progress">
                       <div class="progress-bar gradient32" role="progressbar"
-                        style="width: <?= getPercentage($sm['settings']['fakeUserLimit'], $sm['settings']['fakeUserUsage']); ?>%;"
+                        style="width: <?php echo  getPercentage($sm['settings']['fakeUserLimit'], $sm['settings']['fakeUserUsage']); ?>%;"
                         aria-valuemax="100"></div>
                     </div>
                   </div>
@@ -389,10 +389,10 @@ $whitelist = array(
 
                 <!-- FROM TYPE LICENSE-->
                 <?php if ($s['setting_type'] == 'license') { ?>
-                  <input type="<?= $s['setting_type']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                    data-plugin-update="<?= $s['plugin']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-block="<?= $s['block']; ?>" placeholder=""
-                    value="<?= $sm['settings']['license']; ?>" readonly>
+                  <input type="<?php echo  $s['setting_type']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                    data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-block="<?php echo  $s['block']; ?>" placeholder=""
+                    value="<?php echo  $sm['settings']['license']; ?>" readonly>
                 <?php } ?>
 
                 <!-- FROM TYPE LICENSE-->
@@ -401,16 +401,16 @@ $whitelist = array(
                     <div class="d-flex align-items-top mb-2">
                       <div class="sidebar-heading m-0 p-0 flex text-body">Domains</div>
                       <div class="sidebar-heading m-0 p-0 text-body font-weight-bold">
-                        <span style="margin-right: 25px"><?= $sm['settings']['domainsUsage']; ?> /
-                          <?= $sm['settings']['domainsLimit']; ?></span>
-                        <a href="https://lamatt.serv00.net/buyextradomains.php?license=<?= $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
+                        <span style="margin-right: 25px"><?php echo  $sm['settings']['domainsUsage']; ?> /
+                          <?php echo  $sm['settings']['domainsLimit']; ?></span>
+                        <a href="https://lamatt.serv00.net/buyextradomains.php?license=<?php echo  $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
                           target="_blank">Upgrade limit</a>
 
                       </div>
                     </div>
                     <div class="progress">
                       <div class="progress-bar gradient32" role="progressbar"
-                        style="width:<?= getPercentage($sm['settings']['domainsLimit'], $sm['settings']['domainsUsage']); ?>%;"
+                        style="width:<?php echo  getPercentage($sm['settings']['domainsLimit'], $sm['settings']['domainsUsage']); ?>%;"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
@@ -418,16 +418,16 @@ $whitelist = array(
                     <div class="d-flex align-items-top mb-2">
                       <div class="sidebar-heading m-0 p-0 flex text-body">Fake users</div>
                       <div class="sidebar-heading m-0 p-0 text-body font-weight-bold">
-                        <span style="margin-right: 25px"><?= $sm['settings']['fakeUserUsage']; ?> /
-                          <?= $sm['settings']['fakeUserLimit']; ?></span>
-                        <a href="https://lamatt.serv00.net/buyfakeusers.php?license=<?= $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
+                        <span style="margin-right: 25px"><?php echo  $sm['settings']['fakeUserUsage']; ?> /
+                          <?php echo  $sm['settings']['fakeUserLimit']; ?></span>
+                        <a href="https://lamatt.serv00.net/buyfakeusers.php?license=<?php echo  $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
                           target="_blank">Upgrade
                           limit</a>
                       </div>
                     </div>
                     <div class="progress">
                       <div class="progress-bar gradient32" role="progressbar"
-                        style="width: <?= getPercentage($sm['settings']['fakeUserLimit'], $sm['settings']['fakeUserUsage']); ?>%;"
+                        style="width: <?php echo  getPercentage($sm['settings']['fakeUserLimit'], $sm['settings']['fakeUserUsage']); ?>%;"
                         aria-valuemax="100"></div>
                     </div>
                   </div>
@@ -437,7 +437,7 @@ $whitelist = array(
                 <!-- FROM TYPE EMAIL TEST-->
                 <?php if ($s['setting_type'] == 'emailTest') { ?>
                   <button type="button" class="btn btn-light" data-test-email>
-                    <i class="material-icons mr-1">email</i> Send test email to Admin Email (<?= $sm['user']['email']; ?>)
+                    <i class="material-icons mr-1">email</i> Send test email to Admin Email (<?php echo  $sm['user']['email']; ?>)
                   </button>
                 <?php } ?>
 
@@ -449,18 +449,18 @@ $whitelist = array(
                     <div class='tagHere'>
                       <?php foreach ($messages as $m) { ?>
                         <div class="tag" style="float:left;width: 100%;background: #fafafa;border:1px solid #eee;box-shadow: none"
-                          data-fake-msg="<?= $m['id']; ?>">
-                          <a href="#" onclick="removeFakeMessage('<?= $m['id']; ?>');">
+                          data-fake-msg="<?php echo  $m['id']; ?>">
+                          <a href="#" onclick="removeFakeMessage('<?php echo  $m['id']; ?>');">
                             <i class="material-icons" aria-hidden="true" style="color: #000">close</i>
                           </a>
-                          <span style="color: #000"><?= $m['fake_msg']; ?></span>
+                          <span style="color: #000"><?php echo  $m['fake_msg']; ?></span>
                         </div>
                       <?php }
                       ?>
                     </div>
-                    <input type="text" id="<?= $s['setting']; ?>" data-plugin-type="<?= $s['setting_type']; ?>"
-                      data-plugin-update="<?= $s['plugin']; ?>" data-plugin-block="<?= $s['block']; ?>"
-                      data-plugin-setting="<?= $s['setting']; ?>" placeholder="Add new message here"
+                    <input type="text" id="<?php echo  $s['setting']; ?>" data-plugin-type="<?php echo  $s['setting_type']; ?>"
+                      data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-block="<?php echo  $s['block']; ?>"
+                      data-plugin-setting="<?php echo  $s['setting']; ?>" placeholder="Add new message here"
                       style="height:34px;width:100%;border:1px solid #999;border-radius: 5px;margin-top: 10px;margin-left:2px"
                       autofocus />
                   </div>
@@ -473,18 +473,18 @@ $whitelist = array(
                   <div data-tag-input>
                     <div class='tagHere'>
                       <?php foreach ($mods as $mod) { ?>
-                        <div class="tag" data-mod="<?= $mod['id']; ?>">
-                          <a href="#" onclick="removeModerator('<?= $mod['id']; ?>');">
+                        <div class="tag" data-mod="<?php echo  $mod['id']; ?>">
+                          <a href="#" onclick="removeModerator('<?php echo  $mod['id']; ?>');">
                             <i class="material-icons" aria-hidden="true">close</i>
                           </a>
-                          <span><?= $mod['id']; ?></span>
+                          <span><?php echo  $mod['id']; ?></span>
                         </div>
                       <?php }
                       ?>
                     </div>
-                    <input type="text" id="<?= $s['setting']; ?>" data-plugin-type="<?= $s['setting_type']; ?>"
-                      data-plugin-update="<?= $s['plugin']; ?>" data-plugin-block="<?= $s['block']; ?>"
-                      data-plugin-setting="<?= $s['setting']; ?>" style="height:34px;border:1px solid #999;border-radius: 5px"
+                    <input type="text" id="<?php echo  $s['setting']; ?>" data-plugin-type="<?php echo  $s['setting_type']; ?>"
+                      data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-block="<?php echo  $s['block']; ?>"
+                      data-plugin-setting="<?php echo  $s['setting']; ?>" style="height:34px;border:1px solid #999;border-radius: 5px"
                       autofocus />
                   </div>
                 <?php } ?>
@@ -497,12 +497,12 @@ $whitelist = array(
                       $modData = getArray('moderators_permission', 'WHERE id = "' . $mod['id'] . '"', 'setting ASC');
                     ?>
                       <script>
-                        var modData<?= $modI; ?> = <?= json_encode($modData); ?>;
+                        var modData<?php echo  $modI; ?> = <?php echo  json_encode($modData); ?>;
                       </script>
                       <button type="button" class="btn btn-light"
-                        onclick="openModerationPermission('<?= $mod['id']; ?>',modData<?= $modI; ?>)"
-                        data-mod="<?= $mod['id']; ?>" style="margin-bottom: 5px;display: block">
-                        <i class="material-icons mr-1">security</i> Manage <?= $mod['id']; ?> permissions
+                        onclick="openModerationPermission('<?php echo  $mod['id']; ?>',modData<?php echo  $modI; ?>)"
+                        data-mod="<?php echo  $mod['id']; ?>" style="margin-bottom: 5px;display: block">
+                        <i class="material-icons mr-1">security</i> Manage <?php echo  $mod['id']; ?> permissions
                       </button>
                     <?php $modI++;
                     } ?>
@@ -511,9 +511,9 @@ $whitelist = array(
 
                 <!-- FROM TYPE SELECT-->
                 <?php if ($s['setting_type'] == 'select') { ?>
-                  <select id="<?= $s['setting']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                    data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-update="<?= $s['plugin']; ?>"
-                    data-plugin-block="<?= $s['block']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control">
+                  <select id="<?php echo  $s['setting']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                    data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-update="<?php echo  $s['plugin']; ?>"
+                    data-plugin-block="<?php echo  $s['block']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control">
                     <?php
                     $select = explode(',', $s['setting_options']);
                     foreach ($select as $option) {
@@ -521,7 +521,7 @@ $whitelist = array(
                       <?php if ($option == $s['setting_val']) {
                         $selected = 'selected';
                       } ?>
-                      <option value="<?= $option; ?>" <?= $selected; ?>> <?= $option; ?> </option>
+                      <option value="<?php echo  $option; ?>" <?php echo  $selected; ?>> <?php echo  $option; ?> </option>
                     <?php } ?>
                   </select>
                 <?php } ?>
@@ -531,13 +531,13 @@ $whitelist = array(
             </div>
           <?php } ?>
         </div>
-        <div class="card-footer bg-success" data-footer-plugin="<?= $b['block']; ?>" style="display: none">
+        <div class="card-footer bg-success" data-footer-plugin="<?php echo  $b['block']; ?>" style="display: none">
           <span style="color:#fff">Changes saved</span>
         </div>
-        <div class="card-footer bg-warning" data-footer-plugin-premium="<?= $b['block']; ?>" style="display: none">
+        <div class="card-footer bg-warning" data-footer-plugin-premium="<?php echo  $b['block']; ?>" style="display: none">
           <span style="color:#333;line-height: 30px;">Your license is not premium, upgrade to our premium plan to use this
             feature.</span>
-          <a href="https://lamatt.serv00.net/premium.php?license=<?= $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
+          <a href="https://lamatt.serv00.net/premium.php?license=<?php echo  $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>"
             target="_blank" class="btn btn-outline-warning"
             style="background: #fff;color:#333;float: right;margin-right: 20px;">Suscribe to Premium</a>
         </div>
@@ -549,7 +549,7 @@ $whitelist = array(
             <span style="color:#fff">Email cant be sent, please review the information</span>
           </div>
           <div class="card-footer bg-success" data-footer-email="success" style="display: none">
-            <span style="color:#fff">Email sent successfully to <?= $sm['plugins']['settings']['siteEmail']; ?></span>
+            <span style="color:#fff">Email sent successfully to <?php echo  $sm['plugins']['settings']['siteEmail']; ?></span>
           </div>
         <?php } ?>
 
@@ -558,11 +558,11 @@ $whitelist = array(
 
       <div class="card card-form">
         <div class="card-header card-header-large bg-white">
-          <h4 class="card-header__title"><?= $b['title']; ?></h4>
+          <h4 class="card-header__title"><?php echo  $b['title']; ?></h4>
         </div>
         <div class="row no-gutters">
           <div class="col-lg-4 card-body bg-light">
-            <p class="text-muted"><?= $b['info']; ?></p>
+            <p class="text-muted"><?php echo  $b['info']; ?></p>
           </div>
           <div class="col-lg-8 card-form__body card-body bg-white">
             <div class="form-row">
@@ -584,21 +584,21 @@ $whitelist = array(
                 }
                 ?>
                 <div class="col-12 col-md-6 mb-3">
-                  <label for="<?= $s['setting']; ?>"><?= $s['label']; ?></label><br>
+                  <label for="<?php echo  $s['setting']; ?>"><?php echo  $s['label']; ?></label><br>
 
                   <!-- FROM TYPE TEXT,NUMBER -->
                   <?php if ($s['setting_type'] == 'text' || $s['setting_type'] == 'number') { ?>
-                    <input type="<?= $s['setting_type']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                      data-plugin-update="<?= $s['plugin']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control"
-                      data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-block="<?= $s['block']; ?>" placeholder=""
-                      value="<?= $s['setting_val']; ?>">
+                    <input type="<?php echo  $s['setting_type']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                      data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control"
+                      data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-block="<?php echo  $s['block']; ?>" placeholder=""
+                      value="<?php echo  $s['setting_val']; ?>">
                   <?php } ?>
 
                   <!-- FROM TYPE SELECT-->
                   <?php if ($s['setting_type'] == 'select') { ?>
-                    <select id="<?= $s['setting']; ?>" data-plugin-premium="<?= $s['premium']; ?>"
-                      data-plugin-type="<?= $s['setting_type']; ?>" data-plugin-update="<?= $s['plugin']; ?>"
-                      data-plugin-block="<?= $s['block']; ?>" data-plugin-setting="<?= $s['setting']; ?>" class="form-control">
+                    <select id="<?php echo  $s['setting']; ?>" data-plugin-premium="<?php echo  $s['premium']; ?>"
+                      data-plugin-type="<?php echo  $s['setting_type']; ?>" data-plugin-update="<?php echo  $s['plugin']; ?>"
+                      data-plugin-block="<?php echo  $s['block']; ?>" data-plugin-setting="<?php echo  $s['setting']; ?>" class="form-control">
                       <?php
                       $select = explode(',', $s['setting_options']);
                       foreach ($select as $option) {
@@ -606,7 +606,7 @@ $whitelist = array(
                         <?php if ($option == $s['setting_val']) {
                           $selected = 'selected';
                         } ?>
-                        <option value="<?= $option; ?>" <?= $selected; ?>> <?= $option; ?> </option>
+                        <option value="<?php echo  $option; ?>" <?php echo  $selected; ?>> <?php echo  $option; ?> </option>
                       <?php } ?>
                     </select>
                   <?php } ?>
@@ -619,13 +619,13 @@ $whitelist = array(
                     }
                   ?>
                     <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-                      <input <?= $checked; ?> type="checkbox" id="<?= $s['setting']; ?>"
-                        data-plugin-premium="<?= $s['premium']; ?>" data-plugin-type="<?= $s['setting_type']; ?>"
-                        data-plugin-update="<?= $s['plugin']; ?>" data-plugin-block="<?= $s['block']; ?>"
-                        data-plugin-setting="<?= $s['setting']; ?>" class="custom-control-input">
-                      <label class="custom-control-label" for="<?= $s['setting']; ?>"></label>
+                      <input <?php echo  $checked; ?> type="checkbox" id="<?php echo  $s['setting']; ?>"
+                        data-plugin-premium="<?php echo  $s['premium']; ?>" data-plugin-type="<?php echo  $s['setting_type']; ?>"
+                        data-plugin-update="<?php echo  $s['plugin']; ?>" data-plugin-block="<?php echo  $s['block']; ?>"
+                        data-plugin-setting="<?php echo  $s['setting']; ?>" class="custom-control-input">
+                      <label class="custom-control-label" for="<?php echo  $s['setting']; ?>"></label>
                     </div>
-                    <label for="<?= $s['setting']; ?>" class="mb-0"></label>
+                    <label for="<?php echo  $s['setting']; ?>" class="mb-0"></label>
                   <?php } ?>
 
                 </div>
@@ -636,7 +636,7 @@ $whitelist = array(
             </div>
           </div>
         </div>
-        <div class="card-footer bg-success" data-footer-plugin="<?= $b['block']; ?>" style="display: none">
+        <div class="card-footer bg-success" data-footer-plugin="<?php echo  $b['block']; ?>" style="display: none">
           <span style="color:#fff">Changes saved</span>
         </div>
       </div>
@@ -690,7 +690,7 @@ $whitelist = array(
                 <small style="font-size: 10px;">Note: The incrementation of the fake users will not be instant, we have to
                   manually check your review before adding the 2k extra fakers</small>
               </div>
-              <a href="https://lamatt.serv00.net/review.php?license=<?= $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>&client=<?= $sm['settings']['client']; ?>"
+              <a href="https://lamatt.serv00.net/review.php?license=<?php echo  $sm['settings']['license']; ?>&domain=<?php echo $_SERVER['HTTP_HOST']; ?>&client=<?php echo  $sm['settings']['client']; ?>"
                 target="_blank" class="btn btn-light">Done, please add me the fake users</a>
             </center>
           </div>
@@ -706,7 +706,7 @@ $whitelist = array(
 
 
 <script>
-  var lamatPremium = '<?= $sm['settings']['premium']; ?>';
+  var lamatPremium = '<?php echo  $sm['settings']['premium']; ?>';
   $('[data-test-email]').click(function(e) {
     e.preventDefault();
 
@@ -845,7 +845,7 @@ $whitelist = array(
 
   });
 
-  var currentPlugin = '<?= $plugin; ?>';
+  var currentPlugin = '<?php echo  $plugin; ?>';
   var $input = $("[data-tag-input] input"),
     $appendHere = $(".tagHere"),
     oldKey = 0,

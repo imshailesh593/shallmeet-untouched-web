@@ -4,20 +4,20 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login | <?= $sm['config']['name']; ?></title>
+	<title>Login | <?php echo  $sm['config']['name']; ?></title>
 	<meta name="author" content="Global Premium Script - LAMAT Software" />
-	<link rel="shortcut icon" href="<?= $sm['theme']['favicon']['val']; ?>">
+	<link rel="shortcut icon" href="<?php echo  $sm['theme']['favicon']['val']; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $sm['config']['admin_url']; ?>/login/css/base.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $sm['config']['theme_url']; ?>/css/vendor/sweetalert.css">
 	<style>
 		@font-face {
 			font-family: Stolzl;
-			src: url("<?= $sm['config']['site_url']; ?>administrator/assets/fonts/Stolzl_regular.otf") format("opentype");
+			src: url("<?php echo  $sm['config']['site_url']; ?>administrator/assets/fonts/Stolzl_regular.otf") format("opentype");
 		}
 
 		@font-face {
 			font-family: Stolzl-bold;
-			src: url("<?= $sm['config']['site_url']; ?>administrator/assets/fonts/Stolzl_bold.otf") format("opentype");
+			src: url("<?php echo  $sm['config']['site_url']; ?>administrator/assets/fonts/Stolzl_bold.otf") format("opentype");
 		}
 
 		.lamat-header__title {
@@ -55,7 +55,7 @@
 	<main>
 		<div class="content content--side main-content" style="background: #fdfdfd">
 			<header class="lamat-header">
-				<h1 class="lamat-header__title"><?= $sm['config']['name']; ?> Control Panel</h1>
+				<h1 class="lamat-header__title"><?php echo  $sm['config']['name']; ?> Control Panel</h1>
 				<p class="info" style="color: #444;font-size: 14px">Login to the control panel, enter your email address
 					and control panel password</p>
 			</header>

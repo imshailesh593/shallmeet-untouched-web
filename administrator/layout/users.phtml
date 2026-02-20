@@ -25,37 +25,37 @@ if($sm['moderator']['Users'] == 'No'){
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Total</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users',''); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users',''); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Real</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users','where fake = 0'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users','where fake = 0'); ?></div>
           </div>
       </div>      
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Fake</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users','where fake = 1'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users','where fake = 1'); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Premium</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users','where premium = 1'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users','where premium = 1'); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Online</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users','where last_access >= '.$currentTime); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users','where last_access >= '.$currentTime); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Verified</div>
-              <div class="text-amount ml-auto font16"><?= selectC('users','where verified = 1'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('users','where verified = 1'); ?></div>
           </div>
       </div>                                                      
   </div>
@@ -91,8 +91,8 @@ if($sm['moderator']['Users'] == 'No'){
                           <input type="checkbox" id="filterDate" data-sfc="dateEnabled" class="custom-control-input" style="cursor: pointer;">
                           <label class="custom-control-label" for="filterDate" style="cursor: pointer;"></label>
                       </div>
-                      <input type="text" class="form-control" id="filterDateOverlay" value="<?=$date1;?> to <?=$date2;?>" style="position: absolute;width: 90%;" disabled>                       
-                      <input id="filter_date" type="text" class="form-control" placeholder="Select date ..." data-sf="date" value="<?=$date1;?> to <?=$date2;?>"  data-toggle="flatpickr" data-flatpickr-mode="range" data-flatpickr-alt-format="m/d/Y" data-flatpickr-date-format="m/d/Y" >
+                      <input type="text" class="form-control" id="filterDateOverlay" value="<?php echo $date1;?> to <?php echo $date2;?>" style="position: absolute;width: 90%;" disabled>
+                      <input id="filter_date" type="text" class="form-control" placeholder="Select date ..." data-sf="date" value="<?php echo $date1;?> to <?php echo $date2;?>"  data-toggle="flatpickr" data-flatpickr-mode="range" data-flatpickr-alt-format="m/d/Y" data-flatpickr-date-format="m/d/Y" >
                   </div>
               </div>
           </div>
@@ -105,7 +105,7 @@ if($sm['moderator']['Users'] == 'No'){
                           <?php 
                             $countries = getArrayDSelected('country','users');
                             foreach ($countries as $val) { ?>
-                              <option value="<?= $val['country']; ?>"><?= $val['country']; ?></option>
+                              <option value="<?php echo  $val['country']; ?>"><?php echo  $val['country']; ?></option>
                           <?php } ?>
                       </select>
                   </div>

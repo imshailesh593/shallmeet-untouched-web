@@ -17,7 +17,7 @@
     <meta name="description" content="<?php echo $sm['seoLang']['landing'][2]['text']; ?>">
     <meta name="keywords" content="<?php echo $sm['seoLang']['landing'][3]['text']; ?>">
     <meta name="author" content="<?php echo $sm['config']['name']; ?>">
-    <link rel="icon" type="image/png" href="<?= $sm['landing']['favicon']['val']; ?>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?php echo  $sm['landing']['favicon']['val']; ?>" sizes="32x32">
 
     <meta name="twitter:card" content="app" />
     <meta name="twitter:site" content="@<?php echo $sm['config']['name']; ?>" />
@@ -122,7 +122,7 @@
                 x = w.innerWidth || e.clientWidth || g.clientWidth,
                 y = w.innerHeight || e.clientHeight || g.clientHeight;
             if (x <= 768) {
-                window.location = '<?= $sm['config']['site_url']; ?>';
+                window.location = '<?php echo  $sm['config']['site_url']; ?>';
             }
         }
         <?php if ($sm['landing']['show_mobile']['val'] == 'No') { ?>
@@ -136,7 +136,7 @@
                         x = w.innerWidth || e.clientWidth || g.clientWidth,
                         y = w.innerHeight || e.clientHeight || g.clientHeight;
                     if (x <= 768) {
-                        window.location = '<?= $sm['config']['site_url']; ?>?page=login';
+                        window.location = '<?php echo  $sm['config']['site_url']; ?>?page=login';
                     }
                 };
             }
@@ -150,7 +150,7 @@
             <div class="page-header__inner">
                 <div class="page-header__logo"><span class="icon icon--size-stretch" data-qa="icon"
                         data-qa-icon-name="logo-big" role="img" aria-label="<?php echo $sm['config']['name']; ?> logo">
-                        <img src="<?= $sm['landing']['logo']['val']; ?>" style="max-width: 100%; object-fit: contain;">
+                        <img src="<?php echo  $sm['landing']['logo']['val']; ?>" style="max-width: 100%; object-fit: contain;">
                     </span></div>
             </div>
         </header>
@@ -834,7 +834,7 @@
                                 <div class="page-footer__app-badge"><span class="icon icon--size-stretch" data-qa="icon"
                                         data-qa-icon-name="app-badge" aria-hidden="true"
                                         data-sentry-component="Icon"><img
-                                            src="<?= $sm['landing']['logo']['val']; ?>"></span></div>
+                                            src="<?php echo  $sm['landing']['logo']['val']; ?>"></span></div>
                                 <div class="page-footer__app-stores-list">
                                     <ul role="list" aria-label="Download">
                                         <li><a class="page-footer__app-store-badge page-footer__app-store-badge--app-store-en"

@@ -15,25 +15,25 @@ global $adminUrl;
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Total Reels</div>
-              <div class="text-amount ml-auto font16"><?= selectC('reels',''); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectC('reels',''); ?></div>
           </div>
       </div>
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Total views</div>
-              <div class="text-amount ml-auto font16"><?= selectSum('reels','viewed'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectSum('reels','viewed'); ?></div>
           </div>
       </div>      
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Total likes</div>
-              <div class="text-amount ml-auto font16"><?= selectSum('reels','likes'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectSum('reels','likes'); ?></div>
           </div>
       </div> 
       <div class="card card-body text-center">
           <div class="d-flex flex-row align-items-center">
               <div class="card-header__title m-0">Total purchases</div>
-              <div class="text-amount ml-auto font16"><?= selectSum('reels','purchased'); ?></div>
+              <div class="text-amount ml-auto font16"><?php echo  selectSum('reels','purchased'); ?></div>
           </div>
       </div>                                                                     
   </div>

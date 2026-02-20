@@ -30,7 +30,7 @@
         <div></div>
       </div>    
       <div class="row no-gutters">
-          <?= getAdminFunctionsPrices(); ?>   
+          <?php echo  getAdminFunctionsPrices(); ?>
       </div>
     <div class="card-footer bg-success" data-footer="feature" style="display: none">
         <span style="color:#fff">Changes saved</span>
@@ -41,11 +41,11 @@
     <div class="col-lg-6">
       <div class="card card-form">
           <div class="card-header card-header-large bg-white d-flex align-items-center">
-            <h4 class="card-header__title flex m-0">Price in <?= $sm['plugins']['settings']['currency']; ?> to buy credits</h4>
+            <h4 class="card-header__title flex m-0">Price in <?php echo  $sm['plugins']['settings']['currency']; ?> to buy credits</h4>
             <div></div>
           </div>    
           <div class="row no-gutters">
-              <?= getAdminCreditsPackages(); ?>   
+              <?php echo  getAdminCreditsPackages(); ?>
           </div>
         <div class="card-footer bg-success" data-footer="credits" style="display: none">
             <span style="color:#fff">Changes saved</span>
@@ -55,11 +55,11 @@
   <div class="col-lg-6">
   <div class="card card-form">
       <div class="card-header card-header-large bg-white d-flex align-items-center">
-        <h4 class="card-header__title flex m-0">Price in <?= $sm['plugins']['settings']['currency']; ?> to buy premium</h4>
+        <h4 class="card-header__title flex m-0">Price in <?php echo  $sm['plugins']['settings']['currency']; ?> to buy premium</h4>
         <div></div>
       </div>    
       <div class="row no-gutters">
-          <?= getAdminPremiumPackages(); ?>   
+          <?php echo  getAdminPremiumPackages(); ?>
       </div>
     <div class="card-footer bg-success" data-footer="premium" style="display: none">
         <span style="color:#fff">Changes saved</span>

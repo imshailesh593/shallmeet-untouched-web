@@ -85,10 +85,10 @@ if(isset($_GET['d'])){
                   foreach($arr as $entry){ $q = $entry['question']; ?>
                   <tr style="margin-top: 10px;">
                     <td style="display: inline-table;width: 30%">
-                      <input class="form-control" id="profileQuestion<?= $entry['id'];?>" value="<?= $entry['question'];?>" style="width: 85%"/>
+                      <input class="form-control" id="profileQuestion<?php echo  $entry['id'];?>" value="<?php echo  $entry['question'];?>" style="width: 85%"/>
                     </td> 
                     <td style="display: inline-table;width: 15%">
-                      <select class="form-control" id="profileType<?= $entry['id'];?>" style="width: 85%">
+                      <select class="form-control" id="profileType<?php echo  $entry['id'];?>" style="width: 85%">
                         <?php if($entry['method'] == 'text'){
                           echo '<option value="text"  selected>Text</option>';
                           echo '<option value="select">Select</option>';
@@ -99,7 +99,7 @@ if(isset($_GET['d'])){
                       </select>                       
                     </td>
                     <td style="display: inline-table;width: 25%">
-                      <select class="form-control" id="profileGender<?= $entry['id'];?>" style="width: 85%">
+                      <select class="form-control" id="profileGender<?php echo  $entry['id'];?>" style="width: 85%">
                         <?php
                             $genders = siteGenders(1);
                             $selected = '';
@@ -116,17 +116,17 @@ if(isset($_GET['d'])){
                       </select>                       
                     </td>                      
                     <td style="display: inline-table;width: 10%">
-                      <input class="form-control" type="number" id="profileOrder<?= $entry['id'];?>" value="<?= $entry['q_order'];?>" style="width: 75%"/>
+                      <input class="form-control" type="number" id="profileOrder<?php echo  $entry['id'];?>" value="<?php echo  $entry['q_order'];?>" style="width: 75%"/>
                     </td>                                                           
                     <td style="display: inline-table;width: 15%">
-                      <a href="#" onClick="uQuestion(<?= $entry['id'];?>)" class="btn btn-success" style="display: inline-table;margin-right: 3px"><i class="material-icons">check_circle</i></a>                                
-                      <a href="#" onClick="dQuestion(<?= $entry['id'];?>)" class="btn btn-danger" style="display: inline-table;"><i class="material-icons">delete</i></a>                      
+                      <a href="#" onClick="uQuestion(<?php echo  $entry['id'];?>)" class="btn btn-success" style="display: inline-table;margin-right: 3px"><i class="material-icons">check_circle</i></a>
+                      <a href="#" onClick="dQuestion(<?php echo  $entry['id'];?>)" class="btn btn-danger" style="display: inline-table;"><i class="material-icons">delete</i></a>
                     </td>                       
                   </tr> 
                 <?php } ?>
                    
                   <tr style="margin-top: 10px;">
-                    <input class="form-control" type="hidden" style="display: none" disabled value="<?= $all;?>" name="site_profile_id" style="width: 70%"  />
+                    <input class="form-control" type="hidden" style="display: none" disabled value="<?php echo  $all;?>" name="site_profile_id" style="width: 70%"  />
                     <td style="display: inline-table;width: 30%">
                       <input class="form-control" value="" id="profileQuestion" placeholder="Add profile question" style="width: 85%"/>
                     </td> 
@@ -167,7 +167,7 @@ if(isset($_GET['d'])){
   </div>
 
   <div class="row" id="ajaxAnswers">
-    <?= getAbsolutePageAdmin('questionsAjax'); ?>
+    <?php echo  getAbsolutePageAdmin('questionsAjax'); ?>
   </div>
 </div>
 
@@ -175,7 +175,7 @@ if(isset($_GET['d'])){
 <script>
 document.getElementById("addQuestion").addEventListener("click", addQuestion);
 function addQuestion(){
-  var id = <?= $all; ?>;
+  var id = <?php echo  $all; ?>;
   var q = $('#profileQuestion').val();
   var t = $('#profileType').val();
   var g = $('#profileGender').val();

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?= $sm['config']['name']; ?> Admin Panel</title>
+    <title><?php echo  $sm['config']['name']; ?> Admin Panel</title>
     <meta name="robots" content="noindex">
     <link type="text/css" href="<?php echo $sm['config']['admin_url']; ?>/assets/vendor/simplebar.min.css"
         rel="stylesheet">
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css"
         href="<?php echo $sm['config']['site_url']; ?>themes/default/css/vendor/little-widgets.css" />
     <link rel="stylesheet" href="<?php echo $sm['config']['theme_url']; ?>/css/vendor/slim-lightbox.min.css">
-    <link rel="icon" type="image/png" href="<?= $sm['theme']['favicon']['val']; ?>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?php echo  $sm['theme']['favicon']['val']; ?>" sizes="32x32">
     <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
     <script>
-        var siteUrl = '<?= $sm['config']['site_url']; ?>';
+        var siteUrl = '<?php echo  $sm['config']['site_url']; ?>';
     </script>
     <?php
     $site_config = json_encode($sm['config']);
@@ -210,7 +210,7 @@
     <div id="custom-preloader"
         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background-color: rgba(5, 0, 26, 0.85); display: flex; justify-content: center; align-items: center;">
         <div class="loader-container">
-            <img src="<?= $sm['theme']['logo']['val']; ?>" alt="Logo" class="logo-pulse"
+            <img src="<?php echo  $sm['theme']['logo']['val']; ?>" alt="Logo" class="logo-pulse"
                 style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));">
         </div>
     </div>
@@ -247,7 +247,7 @@
                         </button>
                         <div class="logo" style="margin-left: 80px">
                             <a href="javascript:;" onclick="goTo('main_dashboard')"><img class="responsive-img"
-                                    src="<?= $sm['theme']['logo']['val']; ?>" style="max-width: 140px" /></a>
+                                    src="<?php echo  $sm['theme']['logo']['val']; ?>" style="max-width: 140px" /></a>
                         </div>
                         <?php if ($sm['user']['admin'] == 1) { ?>
                             <ul class="nav navbar-nav ml-auto d-none d-md-flex">
@@ -255,17 +255,17 @@
                                 <div class="d-flex align-items-center sidebar-p-a border-bottom sidebar-account">
                                     <a href="#" class="flex d-flex align-items-center text-underline-0 text-body">
                                         <span class="avatar mr-3">
-                                            <img src="<?= $sm['user']['profile_photo']; ?>" alt="avatar"
+                                            <img src="<?php echo  $sm['user']['profile_photo']; ?>" alt="avatar"
                                                 class="avatar-img rounded-circle">
                                         </span>
                                         <span class="flex d-flex flex-column">
-                                            <strong><?= $sm['user']['name']; ?></strong>
+                                            <strong><?php echo  $sm['user']['name']; ?></strong>
                                             <?php if ($sm['user']['admin'] == 1) { ?>
                                                 <small class="text-muted text-uppercase"
                                                     style="color: #fff">Administrator</small>
                                             <?php } else { ?>
                                                 <small class="text-muted text-uppercase"
-                                                    style="color: #fff"><?= $sm['user']['moderator']; ?></small>
+                                                    style="color: #fff"><?php echo  $sm['user']['moderator']; ?></small>
                                             <?php } ?>
                                         </span>
                                     </a>
@@ -274,18 +274,18 @@
                                                 class="material-icons" style="color: #fff">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
                                             <a class="dropdown-item active" style="color: #fff"
-                                                href="<?= $sm['config']['site_url']; ?>?page=admin">Dashboard</a>
+                                                href="<?php echo  $sm['config']['site_url']; ?>?page=admin">Dashboard</a>
                                             <a class="dropdown-item"
-                                                href="<?= $sm['config']['site_url']; ?>?page=profile&id=<?= $sm['user']['id']; ?>"
+                                                href="<?php echo  $sm['config']['site_url']; ?>?page=profile&id=<?php echo  $sm['user']['id']; ?>"
                                                 target="_blank">Webiste profile</a>
                                             <?php if ($sm['user']['admin'] == 1) { ?>
                                                 <a class="dropdown-item" style="color: #fff"
-                                                    href="<?= $sm['config']['site_url']; ?>?page=admin&p=user&id=<?= $sm['user']['id']; ?>">Edit
+                                                    href="<?php echo  $sm['config']['site_url']; ?>?page=admin&p=user&id=<?php echo  $sm['user']['id']; ?>">Edit
                                                     account</a>
                                             <?php } ?>
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" style="color: #fff"
-                                                href="<?= $sm['config']['site_url']; ?>?page=logout">Logout</a>
+                                                href="<?php echo  $sm['config']['site_url']; ?>?page=logout">Logout</a>
                                         </div>
                                     </div>
                                 </div>
@@ -301,7 +301,7 @@
         <div class="mdk-header-layout__content">
             <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
                 <div class="mdk-drawer-layout__content page" id="admin-content">
-                    <?= $sm['content']; ?>
+                    <?php echo  $sm['content']; ?>
                 </div>
                 <div class="mdk-drawer  js-mdk-drawer" id="default-drawer" data-align="start" style="z-index: 9999;">
                     <div class="mdk-drawer__content">
@@ -330,7 +330,7 @@
                                                     <a class="sidebar-menu-button" href="#" onclick="goTo('users')">
                                                         <span class="sidebar-menu-text">All users</span>
                                                         <span class="ml-auto d-flex align-items-center">
-                                                            <span class="badge badge-light"><?= selectC('users', ''); ?></span>
+                                                            <span class="badge badge-light"><?php echo  selectC('users', ''); ?></span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -351,7 +351,7 @@
                                                                 <span class="sidebar-menu-text">All Media</span>
                                                                 <span class="ml-auto d-flex align-items-center">
                                                                     <span class="badge badge-light"
-                                                                        id="totalMediaAll"><?= selectC('users_photos', ''); ?></span>
+                                                                        id="totalMediaAll"><?php echo  selectC('users_photos', ''); ?></span>
                                                                 </span>
                                                             </a>
                                                         </li>
@@ -361,7 +361,7 @@
                                                                 <span class="sidebar-menu-text">Photos</span>
                                                                 <span class="ml-auto d-flex align-items-center">
                                                                     <span class="badge badge-light"
-                                                                        id="totalMediaPotos"><?= selectC('users_photos', 'where video = 0 and story = 0'); ?></span>
+                                                                        id="totalMediaPotos"><?php echo  selectC('users_photos', 'where video = 0 and story = 0'); ?></span>
                                                                 </span>
                                                             </a>
                                                         </li>
@@ -372,7 +372,7 @@
                                                                     id="totalMediaVideos">Videos</span>
                                                                 <span class="ml-auto d-flex align-items-center">
                                                                     <span
-                                                                        class="badge badge-light"><?= selectC('users_photos', 'where video = 1 and story = 0'); ?></span>
+                                                                        class="badge badge-light"><?php echo  selectC('users_photos', 'where video = 1 and story = 0'); ?></span>
                                                                 </span>
                                                             </a>
                                                         </li>
@@ -383,7 +383,7 @@
                                                                     id="totalMediaStories">Stories</span>
                                                                 <span class="ml-auto d-flex align-items-center">
                                                                     <span
-                                                                        class="badge badge-light"><?= selectC('users_photos', 'where story > 0'); ?></span>
+                                                                        class="badge badge-light"><?php echo  selectC('users_photos', 'where story > 0'); ?></span>
                                                                 </span>
                                                             </a>
                                                         </li>
@@ -397,7 +397,7 @@
                                                                     <span class="sidebar-menu-text">Feed posts</span>
                                                                     <span class="ml-auto d-flex align-items-center">
                                                                         <span class="badge badge-light"
-                                                                            id="feedCount"><?= selectC('feed', 'where visible = 1'); ?></span>
+                                                                            id="feedCount"><?php echo  selectC('feed', 'where visible = 1'); ?></span>
                                                                     </span>
                                                                 </a>
                                                             </li>
@@ -412,7 +412,7 @@
                                                                     <span class="sidebar-menu-text">Reels</span>
                                                                     <span class="ml-auto d-flex align-items-center">
                                                                         <span class="badge badge-light"
-                                                                            id="reelsCount"><?= selectC('reels', 'where visible = 1'); ?></span>
+                                                                            id="reelsCount"><?php echo  selectC('reels', 'where visible = 1'); ?></span>
                                                                     </span>
                                                                 </a>
                                                             </li>
@@ -424,7 +424,7 @@
                                                                 <span class="sidebar-menu-text">Dating Request</span>
                                                                 <span class="ml-auto d-flex align-items-center">
                                                                     <span class="badge badge-light"
-                                                                        id="datingCount"><?= selectC('dating', ''); ?></span>
+                                                                        id="datingCount"><?php echo  selectC('dating', ''); ?></span>
                                                                 </span>
                                                             </a>
                                                         </li>
@@ -435,7 +435,7 @@
                                                                 <span class="sidebar-menu-text">Pending review</span>
                                                                 <span class="ml-auto d-flex align-items-center">
                                                                     <span
-                                                                        class="badge badge-light"><?= selectC('users_photos', 'where approved = 0'); ?></span>
+                                                                        class="badge badge-light"><?php echo  selectC('users_photos', 'where approved = 0'); ?></span>
                                                                 </span>
                                                             </a>
                                                         </li>
@@ -454,7 +454,7 @@
                                                         if ($checkVerifications > 0) { ?>
                                                             <span class="ml-auto d-flex align-items-center">
                                                                 <span class="badge badge-light"
-                                                                    id="pendingUsersVerificationLabel"><?= $checkVerifications; ?></span>
+                                                                    id="pendingUsersVerificationLabel"><?php echo  $checkVerifications; ?></span>
                                                             </span>
                                                         <?php } ?>
                                                     </a>
@@ -468,7 +468,7 @@
                                                         <span class="sidebar-menu-text">Banned users</span>
                                                         <span class="ml-auto d-flex align-items-center">
                                                             <span class="badge badge-light"
-                                                                id="bannedUsersCount"><?= selectC('blocked_users', ''); ?></span>
+                                                                id="bannedUsersCount"><?php echo  selectC('blocked_users', ''); ?></span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -478,7 +478,7 @@
                                                         <span class="sidebar-menu-text">Banned IP</span>
                                                         <span class="ml-auto d-flex align-items-center">
                                                             <span class="badge badge-light"
-                                                                id="bannedIPCount"><?= selectC('blocked_ips', ''); ?></span>
+                                                                id="bannedIPCount"><?php echo  selectC('blocked_ips', ''); ?></span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -491,7 +491,7 @@
                                                         <span class="sidebar-menu-text">Videochats records</span>
                                                         <span class="ml-auto d-flex align-items-center">
                                                             <span class="badge badge-light"
-                                                                id="videocallsCount"><?= selectC('videocall', ''); ?></span>
+                                                                id="videocallsCount"><?php echo  selectC('videocall', ''); ?></span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -506,7 +506,7 @@
                                                         <span class="sidebar-menu-text">Live Streams</span>
                                                         <span class="ml-auto d-flex align-items-center">
                                                             <span class="badge badge-light"
-                                                                id="livesCount"><?= selectC('live', ''); ?></span>
+                                                                id="livesCount"><?php echo  selectC('live', ''); ?></span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -520,7 +520,7 @@
                                                             <span class="sidebar-menu-text">Reported users</span>
                                                             <span class="ml-auto d-flex align-items-center">
                                                                 <span class="badge badge-light"
-                                                                    id="reportedUsersCount"><?= selectC('reports', 'where viewed = 0'); ?></span>
+                                                                    id="reportedUsersCount"><?php echo  selectC('reports', 'where viewed = 0'); ?></span>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -534,7 +534,7 @@
                                                         <span class="sidebar-menu-text">Withdrawal requests</span>
                                                         <span class="ml-auto d-flex align-items-center">
                                                             <span class="badge badge-light"
-                                                                id="reportedUsersCount"><?= selectC('users_withdraw', ''); ?></span>
+                                                                id="reportedUsersCount"><?php echo  selectC('users_withdraw', ''); ?></span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -549,7 +549,7 @@
                                                             <span class="sidebar-menu-text">Users Pending Orders</span>
                                                             <span class="ml-auto d-flex align-items-center">
                                                                 <span class="badge badge-light"
-                                                                    id="reportedUsersCount"><?= selectC('orders', 'where order_status = "pending" and order_custom = 1'); ?></span>
+                                                                    id="reportedUsersCount"><?php echo  selectC('orders', 'where order_status = "pending" and order_custom = 1'); ?></span>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -561,7 +561,7 @@
                                                         <span class="sidebar-menu-text">Users Orders</span>
                                                         <span class="ml-auto d-flex align-items-center">
                                                             <span class="badge badge-light"
-                                                                id="reportedUsersCount"><?= selectC('orders', 'where order_status = "success"'); ?></span>
+                                                                id="reportedUsersCount"><?php echo  selectC('orders', 'where order_status = "success"'); ?></span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -792,7 +792,7 @@
                                     <?php
                                     foreach ($possibleLanguagesArr as $value) {
                                         $langData = explode(';', $value); ?>
-                                        <option value="<?= $langData[1]; ?>"><?= $langData[0]; ?>
+                                        <option value="<?php echo  $langData[1]; ?>"><?php echo  $langData[0]; ?>
                                         <?php } ?>
                                 </select>
 
@@ -917,7 +917,7 @@
                 <div class="lw-wrap lw-bb">
                     <div class="lw-panel lw-panel_lg">
                         <div class="lw-preview lw-pic profile-photo" style="height: 80px;border-radius: 5px"
-                            data-src="<?= $sm['config']['theme_url'] . "/images/no_user.png"; ?>">
+                            data-src="<?php echo  $sm['config']['theme_url'] . "/images/no_user.png"; ?>">
                         </div>
                         <div class="lw-group">
                             <div class="lw-title">
@@ -931,21 +931,21 @@
                 <div class="lw-wrap" style="background: #F7F8F9">
                     <div class="lw-inline">
                         <div class="lw-field profileSettingField">
-                            <div class="lw-label"><?= $sm['lang'][26]['text']; ?></div>
+                            <div class="lw-label"><?php echo  $sm['lang'][26]['text']; ?></div>
                             <div class="lw-group">
                                 <input class="lw-input" placeholder="Add name" data-create-profile-info type="text"
                                     name="name" required>
                             </div>
                         </div>
                         <div class="lw-field profileSettingField">
-                            <div class="lw-label"><?= $sm['lang'][331]['text']; ?></div>
+                            <div class="lw-label"><?php echo  $sm['lang'][331]['text']; ?></div>
                             <div class="lw-group">
                                 <input class="lw-input" autocomplete="new-password" data-create-profile-info type="text"
                                     name="username" id="createUsername" placeholder="Add username" required>
                             </div>
                         </div>
                         <div class="lw-field profileSettingField">
-                            <div class="lw-label"><?= $sm['lang'][28]['text']; ?></div>
+                            <div class="lw-label"><?php echo  $sm['lang'][28]['text']; ?></div>
                             <div class="lw-group">
                                 <input class="lw-input" autocomplete="new-password" data-create-profile-info
                                     type="email" name="email" value="" id="createEmail" placeholder="Add email"
@@ -960,25 +960,25 @@
                             </div>
                         </div>
                         <div class="lw-field profileSettingField">
-                            <div class="lw-label"><?= $sm['lang'][30]['text']; ?></div>
+                            <div class="lw-label"><?php echo  $sm['lang'][30]['text']; ?></div>
                             <div class="lw-group">
                                 <select class="lw-select" id="createDay" data-create-profile-info name="day"
                                     style="width: 25%;display: inline-table;">
-                                    <?= date_dropdown_landing(1); ?>
+                                    <?php echo  date_dropdown_landing(1); ?>
                                 </select>
                                 <select class="lw-select" id="createMonth" data-create-profile-info name="month"
                                     style="width: 42%;display: inline-table;">
-                                    <?= date_dropdown_landing(0, 1); ?>
+                                    <?php echo  date_dropdown_landing(0, 1); ?>
                                 </select>
                                 <select class="lw-select" id="createYear" data-create-profile-info name="year"
                                     style="width: 30.9%;display: inline-table;">
-                                    <?= date_dropdown_landing(0, 0, 1); ?>
+                                    <?php echo  date_dropdown_landing(0, 0, 1); ?>
                                 </select>
                             </div>
                         </div>
 
                         <div class="lw-field profileSettingField">
-                            <div class="lw-label"><?= $sm['lang'][32]['text']; ?></div>
+                            <div class="lw-label"><?php echo  $sm['lang'][32]['text']; ?></div>
                             <div class="lw-group">
                                 <input class="lw-input" type="text" autocomplete="new-password" id="createUserLoc"
                                     placeholder="Add location" required value="">
@@ -986,7 +986,7 @@
                         </div>
 
                         <div class="lw-field profileSettingField">
-                            <div class="lw-label"><?= $sm['lang'][34]['text']; ?></div>
+                            <div class="lw-label"><?php echo  $sm['lang'][34]['text']; ?></div>
                             <div class="lw-group">
                                 <select class="lw-select" data-create-profile-info name="gender">
                                     <?php
@@ -1023,10 +1023,10 @@
                         </div>
 
                         <div class="lw-field profileSettingField">
-                            <div class="lw-label"><?= $sm['lang'][134]['text']; ?></div>
+                            <div class="lw-label"><?php echo  $sm['lang'][134]['text']; ?></div>
                             <div class="lw-group">
                                 <select class="lw-select" data-create-profile-info name="lang">
-                                    <?= getSiteLangs(0); ?>
+                                    <?php echo  getSiteLangs(0); ?>
                                 </select>
                             </div>
                         </div>
@@ -1162,13 +1162,13 @@
                             <div class="col-lg-6 card-body d-flex align-items-center">
                                 <div class="flex">
                                     <label
-                                        for="moderationPermission<?= $data['moderation']; ?>"><?= $data['title']; ?></label><br>
+                                        for="moderationPermission<?php echo  $data['moderation']; ?>"><?php echo  $data['title']; ?></label><br>
                                     <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-                                        <input type="checkbox" id="moderationPermission<?= $data['moderation']; ?>"
-                                            onchange="updateModerationPermission(this.checked,'<?= $data['moderation']; ?>');"
+                                        <input type="checkbox" id="moderationPermission<?php echo  $data['moderation']; ?>"
+                                            onchange="updateModerationPermission(this.checked,'<?php echo  $data['moderation']; ?>');"
                                             class="custom-control-input">
                                         <label class="custom-control-label"
-                                            for="moderationPermission<?= $data['moderation']; ?>">Yes</label>
+                                            for="moderationPermission<?php echo  $data['moderation']; ?>">Yes</label>
                                     </div>
                                 </div>
                             </div>
@@ -1462,10 +1462,10 @@
     <script>
         var gUrl = request_source() + '/admin.php';
         var upType;
-        var globalKey = '<?= siteConfig('client'); ?>';
-        var admin_url = '<?= $sm['config']['admin_url']; ?>/';
-        var site_url = '<?= $sm['config']['site_url']; ?>';
-        var sVersion = '<?= $sm['settings']['currentVersion']; ?>';
+        var globalKey = '<?php echo  siteConfig('client'); ?>';
+        var admin_url = '<?php echo  $sm['config']['admin_url']; ?>/';
+        var site_url = '<?php echo  $sm['config']['site_url']; ?>';
+        var sVersion = '<?php echo  $sm['settings']['currentVersion']; ?>';
         var selectedPreset = 0;
         var w = window,
             d = document,
@@ -1561,9 +1561,9 @@
     <script src="<?php echo $sm['config']['admin_url']; ?>/assets/js/list.js"></script>
     <script src="<?php echo $sm['config']['admin_url']; ?>/assets/vendor/toastr.min.js"></script>
     <script src="<?php echo $sm['config']['admin_url']; ?>/assets/js/toastr.js"></script>
-    <script src="<?= $sm['config']['site_url']; ?>themes/plugins/story.js"></script>
+    <script src="<?php echo  $sm['config']['site_url']; ?>themes/plugins/story.js"></script>
     <?php if ($checkFeed == 1) { ?>
-        <script src="<?= $sm['config']['site_url']; ?>themes/plugins/feed.js"></script>
+        <script src="<?php echo  $sm['config']['site_url']; ?>themes/plugins/feed.js"></script>
     <?php } ?>
 
     <script>

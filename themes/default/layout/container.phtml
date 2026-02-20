@@ -24,12 +24,12 @@
   <meta name="description" content="<?php echo $sm['seoLang']['landing'][2]['text']; ?>">
   <meta name="keywords" content="<?php echo $sm['seoLang']['landing'][3]['text']; ?>">
   <meta name="author" content="<?php echo $sm['config']['name']; ?>" />
-  <meta property="fb:app_id" content="<?= siteConfig('fb_app_id'); ?>" />
+  <meta property="fb:app_id" content="<?php echo  siteConfig('fb_app_id'); ?>" />
 
   <meta property="og:title" content="<?php echo $sm['config']['title']; ?>" />
   <meta property="og:site_name" content="<?php echo $sm['config']['name']; ?>">
   <meta property="og:url" content="<?php echo $sm['config']['site_url']; ?>" />
-  <!-- <meta property="og:image" content="<?= $sm['theme']['logo']['val']; ?>" /> -->
+  <!-- <meta property="og:image" content="<?php echo  $sm['theme']['logo']['val']; ?>" /> -->
   <meta property="og:image" content="<?php echo $sm['config']['theme_url']; ?>/icons/social.jpeg">
   <meta property="og:description" content="<?php echo $sm['config']['description']; ?>" />
   <meta property="og:type" content="website" />
@@ -46,14 +46,14 @@
   <meta name="twitter:description" content="<?php echo $sm['config']['description']; ?>">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="<?= $sm['theme']['favicon']['val']; ?>">
+  <link rel="icon" type="image/png" href="<?php echo  $sm['theme']['favicon']['val']; ?>">
 
   <title><?php echo $sm['config']['name']; ?> | <?php echo $sm['seoLang']['landing'][1]['text']; ?></title>
 
   <link rel="manifest" href="<?php echo $sm['config']['theme_url']; ?>/manifest.json">
 
   <link rel="preload" href="<?php echo $sm['config']['theme_url']; ?>/main.dart.js" as="script">
-  <link rel="preload" href="<?= $sm['theme']['logo']['val']; ?>" as="image">
+  <link rel="preload" href="<?php echo  $sm['theme']['logo']['val']; ?>" as="image">
   <link rel="preload" href="<?php echo $sm['config']['theme_url']; ?>/splash/img/light-background.png" as="image">
 
 
@@ -142,12 +142,12 @@
 <body>
   <picture id="splash">
     <source
-      srcset="<?= $sm['theme']['logo']['val']; ?> 1x, <?= $sm['theme']['logo']['val']; ?> 2x, <?= $sm['theme']['logo']['val']; ?> 3x, <?= $sm['theme']['logo']['val']; ?> 4x"
+      srcset="<?php echo  $sm['theme']['logo']['val']; ?> 1x, <?php echo  $sm['theme']['logo']['val']; ?> 2x, <?php echo  $sm['theme']['logo']['val']; ?> 3x, <?php echo  $sm['theme']['logo']['val']; ?> 4x"
       media="(prefers-color-scheme: light)">
     <source
-      srcset="<?= $sm['theme']['logo']['val']; ?> 1x, <?= $sm['theme']['logo']['val']; ?> 2x, <?= $sm['theme']['logo']['val']; ?> 3x, <?= $sm['theme']['logo']['val']; ?> 4x"
+      srcset="<?php echo  $sm['theme']['logo']['val']; ?> 1x, <?php echo  $sm['theme']['logo']['val']; ?> 2x, <?php echo  $sm['theme']['logo']['val']; ?> 3x, <?php echo  $sm['theme']['logo']['val']; ?> 4x"
       media="(prefers-color-scheme: dark)">
-    <img class="center" aria-hidden="true" src="<?= $sm['theme']['logo']['val']; ?>"
+    <img class="center" aria-hidden="true" src="<?php echo  $sm['theme']['logo']['val']; ?>"
       alt="">
   </picture>
 

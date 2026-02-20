@@ -38,8 +38,8 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
                     <p class="text-muted">This is the current visible preset for your mobile website.</p> 
                 </div>
                 <div class="col-lg-9 card-form__body card card-form card-body" style="padding: 25px">
-                    <h2><?= ucfirst($sm['settings']['mobileTheme']); ?></h2>
-                    <p class="text-muted">Preset: <strong style="color: #111"><?= ucfirst($currentTheme['preset_alias']);?></strong></p>
+                    <h2><?php echo  ucfirst($sm['settings']['mobileTheme']); ?></h2>
+                    <p class="text-muted">Preset: <strong style="color: #111"><?php echo  ucfirst($currentTheme['preset_alias']);?></strong></p>
                   
                 </div>
             </div>
@@ -69,7 +69,7 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
             $mobileThemes = getArray('config_themes','WHERE type = 3','id ASC');
             foreach ($mobileThemes as $mobile) { ?>
               <div class="card-theme"  style="max-width: 385px;min-width:385px;height: 320px;">
-                <div class="screenshot" style="cursor: default;background-image: url(<?= $mobile['screenshot']; ?>);background-size: cover;background-position: center;">
+                <div class="screenshot" style="cursor: default;background-image: url(<?php echo  $mobile['screenshot']; ?>);background-size: cover;background-position: center;">
 
                   <?php if($mobile['purchased'] == 0){ ?> 
                   <div style="position: absolute;width: 100%;height: 100%;background:rgba(0,0,0,.4);z-index: 9;"></div>
@@ -78,7 +78,7 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
                   <?php } ?> 
                     
                 </div>
-                    <span class="badge badge-primary" style="position:absolute;z-index:9;top:10px;left: 0; right: 0; margin-left: auto; margin-right: auto;font-size: 14px;padding-top: 5px;padding-left: 15px;background: none;text-align: center;"><?= $mobile['name']; ?></span> 
+                    <span class="badge badge-primary" style="position:absolute;z-index:9;top:10px;left: 0; right: 0; margin-left: auto; margin-right: auto;font-size: 14px;padding-top: 5px;padding-left: 15px;background: none;text-align: center;"><?php echo  $mobile['name']; ?></span>
                                   
                   <?php if($mobile['purchased'] == 1){ ?> 
 
@@ -87,14 +87,14 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
                         <i class="material-icons" >check_circle</i>
                         Selected</a> 
                       <?php } else { ?>
-                        <a href="javascript:;" onclick="selectTheme(<?= $mobile['type']; ?>,'<?= $mobile['folder']; ?>')" class="btn btn-white gradient44" style="position:absolute;z-index:9;left: 0; right: 0; margin-left: auto; margin-right: auto;top:140px;width:160px;background: #4b367c;color: #fff"><i class="material-icons" style="color: #fff">view_compact</i> 
+                        <a href="javascript:;" onclick="selectTheme(<?php echo  $mobile['type']; ?>,'<?php echo  $mobile['folder']; ?>')" class="btn btn-white gradient44" style="position:absolute;z-index:9;left: 0; right: 0; margin-left: auto; margin-right: auto;top:140px;width:160px;background: #4b367c;color: #fff"><i class="material-icons" style="color: #fff">view_compact</i>
                         Select Theme</a>
                       <?php } ?> 
                   <?php } else { ?>
-                      <a href="https://lamatt.serv00.net/buy-premium-plugin.php?plugin=<?= $mobile['folder']; ?>&license=<?= $sm['settings']['license']; ?>" target="_blank" class="btn btn-white box-shadow gradient32" style="position:absolute;z-index:9;left: 0; right: 0; margin-left: auto; margin-right: auto;top:120px;width:160px;float: right;color: #fff">
+                      <a href="https://lamatt.serv00.net/buy-premium-plugin.php?plugin=<?php echo  $mobile['folder']; ?>&license=<?php echo  $sm['settings']['license']; ?>" target="_blank" class="btn btn-white box-shadow gradient32" style="position:absolute;z-index:9;left: 0; right: 0; margin-left: auto; margin-right: auto;top:120px;width:160px;float: right;color: #fff">
                         <i class="material-icons">attach_money</i>
                         Purchase now</a>
-                      <a href="https://lamatt.serv00.net/panel-live-demo?theme=<?= $mobile['folder']; ?>" target="_blank" class="btn btn-white box-shadow" style="position:absolute;z-index:9;left: 0; right: 0; margin-left: auto; margin-right: auto;top:160px;width:160px;float: right;background:#fff">
+                      <a href="https://lamatt.serv00.net/panel-live-demo?theme=<?php echo  $mobile['folder']; ?>" target="_blank" class="btn btn-white box-shadow" style="position:absolute;z-index:9;left: 0; right: 0; margin-left: auto; margin-right: auto;top:160px;width:160px;float: right;background:#fff">
                         Live demo</a>                                             
                   <?php } ?>                                      
               </div> 
@@ -151,11 +151,11 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
           $presets = getArray('theme_preset',$filter,'theme_modification DESC');
           $i=0; 
           foreach ($presets as $p) { ?>
-          <div class="row align-items-center" data-preset-row="<?= $p['preset']; ?>" style="padding-left: 15px;">
+          <div class="row align-items-center" data-preset-row="<?php echo  $p['preset']; ?>" style="padding-left: 15px;">
               <div class="col-auto" style="width: 30%">
                   <div class="d-flex align-items-center">
-                      <a href="<?= $sm['config']['site_url']; ?>index.php?landing=<?= $p['theme']; ?>&landingPreset=<?= $p['preset']; ?>" target="_blank" class="text-body">
-                        <strong class="text-15pt mr-2" data-preset-alias="<?= $p['preset']; ?>"><?= $p['preset_alias']; ?></strong>
+                      <a href="<?php echo  $sm['config']['site_url']; ?>index.php?landing=<?php echo  $p['theme']; ?>&landingPreset=<?php echo  $p['preset']; ?>" target="_blank" class="text-body">
+                        <strong class="text-15pt mr-2" data-preset-alias="<?php echo  $p['preset']; ?>"><?php echo  $p['preset_alias']; ?></strong>
                       </a>
                       <?php if($sm['settings']['landingThemePreset'] == $p['preset']){ ?> 
                         <span class="badge badge-success" style="float: right;">Live</span> 
@@ -164,11 +164,11 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
               </div>
               <div class="col-auto" style="width: 20%">
                   <div class="d-flex align-items-center">
-                      <span class="text-body"><strong class="text-15pt mr-2"><?= $p['preset_base']; ?></strong></span>
+                      <span class="text-body"><strong class="text-15pt mr-2"><?php echo  $p['preset_base']; ?></strong></span>
                   </div>
               </div>                
               <div class="col-auto text-left" style="width: 15%;padding-top: 15px;padding-left: 10px">
-                  <p class="nunito" style="color: #888;font-size: 12px;" data-preset-last-update="<?= $p['preset']; ?>"><?= time_elapsed_string($p['theme_modification']); ?></p>
+                  <p class="nunito" style="color: #888;font-size: 12px;" data-preset-last-update="<?php echo  $p['preset']; ?>"><?php echo  time_elapsed_string($p['theme_modification']); ?></p>
               </div>                                              
               <div class="col-auto text-center" style="width: 33%;right: 40px;float: right;">
                   <div class="dropdown ml-auto presetsDropdown">
@@ -176,19 +176,19 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
                           <i class="material-icons">more_vert</i>
                       </a>
                       <div class="dropdown-menu" style="font-size: 13px;">
-                          <a class="dropdown-item" href="<?= $sm['config']['site_url']; ?>index.php?landing=<?= $p['theme']; ?>&landingPreset=<?= $p['preset']; ?>" target="_blank">
+                          <a class="dropdown-item" href="<?php echo  $sm['config']['site_url']; ?>index.php?landing=<?php echo  $p['theme']; ?>&landingPreset=<?php echo  $p['preset']; ?>" target="_blank">
                             <strong>Live demo</strong>
                           </a>
                           <div class="dropdown-divider"></div>                          
-                          <a class="dropdown-item" href="<?= $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?= $p['theme'];?>&preset=<?= $p['preset']; ?>" target="_blank" style="color: #4b367c;">
+                          <a class="dropdown-item" href="<?php echo  $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?php echo  $p['theme'];?>&preset=<?php echo  $p['preset']; ?>" target="_blank" style="color: #4b367c;">
                             <strong>Edit preset</strong>
                           </a>
                           <div class="dropdown-divider"></div>                                                     
-                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="duplicate" data-edit-preset="<?= $p['preset']; ?>" data-edit-preset-alias="<?= $p['preset_alias']; ?>">Duplicate</a>
+                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="duplicate" data-edit-preset="<?php echo  $p['preset']; ?>" data-edit-preset-alias="<?php echo  $p['preset_alias']; ?>">Duplicate</a>
 
-                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="rename" data-edit-preset="<?= $p['preset']; ?>" data-edit-preset-alias="<?= $p['preset_alias']; ?>">Rename</a>
+                          <a class="dropdown-item" href="javascript:;" data-edit-preset-action="rename" data-edit-preset="<?php echo  $p['preset']; ?>" data-edit-preset-alias="<?php echo  $p['preset_alias']; ?>">Rename</a>
 
-                          <a class="dropdown-item" href="javascript:;" data-export-preset-json-name="<?= $p['preset_alias']; ?>" data-export-preset-json="<?= $p['preset']; ?>">Export JSON file</a>
+                          <a class="dropdown-item" href="javascript:;" data-export-preset-json-name="<?php echo  $p['preset_alias']; ?>" data-export-preset-json="<?php echo  $p['preset']; ?>">Export JSON file</a>
 
                           <?php if($sm['settings']['landingThemePreset'] == $p['preset']){ ?>
                           <div class="dropdown-divider"></div>
@@ -196,13 +196,13 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
                           <?php } ?>                      
                           <?php if($sm['settings']['landingThemePreset'] != $p['preset']){ ?> 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:;" data-edit-preset-action="delete" data-edit-preset="<?= $p['preset']; ?>" data-edit-preset-alias="<?= $p['preset_alias']; ?>">Delete</a>   
+                            <a class="dropdown-item" href="javascript:;" data-edit-preset-action="delete" data-edit-preset="<?php echo  $p['preset']; ?>" data-edit-preset-alias="<?php echo  $p['preset_alias']; ?>">Delete</a>
                           <?php } ?>
 
                       </div>
                   </div>                
                                   
-                  <a href="<?= $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?= $p['theme'];?>&preset=<?= $p['preset']; ?>" target="_blank" class="btn btn-light" style="color: #4b367c;float: right;"><i class="material-icons">brush</i></a>                                                 
+                  <a href="<?php echo  $sm['config']['site_url'];?>administrator/editor/index.php?theme=<?php echo  $p['theme'];?>&preset=<?php echo  $p['preset']; ?>" target="_blank" class="btn btn-light" style="color: #4b367c;float: right;"><i class="material-icons">brush</i></a>
               </div>
           </div>
         <?php } ?>
@@ -217,7 +217,7 @@ if($sm['settings']['mobileTheme'] != 'mobile'){
 <script>
   /*
   var tadiv = document.getElementById('loadThemes');
-  var landingThemes = <?= json_encode(getArray('config_themes','WHERE type = 2','id DESC')); ?>;
+  var landingThemes = <?php echo  json_encode(getArray('config_themes','WHERE type = 2','id DESC')); ?>;
   var themeShow = 1;
   landingThemes.forEach(function(el) {
       

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<link rel="icon" type="image/png" href="<?= $sm['theme']['favicon']['val']; ?>" sizes="32x32">
+<link rel="icon" type="image/png" href="<?php echo  $sm['theme']['favicon']['val']; ?>" sizes="32x32">
 <link rel="stylesheet" href="<?php echo $sm['config']['site_url']; ?>themes/default/css/profileLanding.css"/>
 <link rel="stylesheet" href="<?php echo $sm['config']['site_url']; ?>themes/default/css/crossplatform.css"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@ body{
   background: #fafafa;
 }
 .landing__profilePhoto{
-  background-image:url("<?= profilePhoto($sm['profile']['id'],1); ?>");
+  background-image:url("<?php echo  profilePhoto($sm['profile']['id'],1); ?>");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -92,35 +92,35 @@ position:fixed;bottom:-20px;left:0;width:100%;max-width:600px;left: 50%;
 transform: translateX(-50%);z-index: 99;
 }
 .storyOn{
-  stroke: <?= $sm['theme']['story_on_landing']['val'];?> !important;
+  stroke: <?php echo  $sm['theme']['story_on_landing']['val'];?> !important;
 }
 @keyframes color {
   100%,
   0% {
-    stroke: <?= $sm['theme']['story_on_landing']['val'];?>;
+    stroke: <?php echo  $sm['theme']['story_on_landing']['val'];?>;
   }
   90% {
-    stroke: <?= $sm['theme']['story_on_landing']['val'];?>
+    stroke: <?php echo  $sm['theme']['story_on_landing']['val'];?>
   }
 }
 
 .storyOff{
-  stroke: <?= $sm['theme']['story_off_landing']['val'];?> !important;
+  stroke: <?php echo  $sm['theme']['story_off_landing']['val'];?> !important;
   stroke-width:1px !important;
 }
 .profileBio{
-    color: <?=$sm['theme']['profileOff_bio_font_color']['val']; ?> !important;    
-    font-family: '<?= $sm['theme']['profileOff_bio_font']['val']; ?>' !important;
-    font-size: <?= $sm['theme']['profileOff_bio_fontSize']['val']; ?>px !important; 
+    color: <?php echo $sm['theme']['profileOff_bio_font_color']['val']; ?> !important;
+    font-family: '<?php echo  $sm['theme']['profileOff_bio_font']['val']; ?>' !important;
+    font-size: <?php echo  $sm['theme']['profileOff_bio_fontSize']['val']; ?>px !important;
 }
 .profileName{    
-    font-family: '<?= $sm['theme']['profileOff_bio_font']['val']; ?>' !important;
-    font-size: <?= $sm['theme']['profileOff_bio_fontSize']['val']*1.45; ?>px !important; 
+    font-family: '<?php echo  $sm['theme']['profileOff_bio_font']['val']; ?>' !important;
+    font-size: <?php echo  $sm['theme']['profileOff_bio_fontSize']['val']*1.45; ?>px !important;
 }
 .profileRegister{
-    color: <?=$sm['theme']['profileOff_register_font_color']['val']; ?> !important;    
-    font-family: '<?= $sm['theme']['profileOff_register_font']['val']; ?>' !important;
-    font-size: <?= $sm['theme']['profileOff_register_fontSize']['val']; ?>px !important; 
+    color: <?php echo $sm['theme']['profileOff_register_font_color']['val']; ?> !important;
+    font-family: '<?php echo  $sm['theme']['profileOff_register_font']['val']; ?>' !important;
+    font-size: <?php echo  $sm['theme']['profileOff_register_fontSize']['val']; ?>px !important;
 }
 </style>
 <?php $fonts = getArrayDSelected('font','theme_preset_fonts','where preset = "'.$_SESSION['preset'].'"');
@@ -130,46 +130,46 @@ foreach ($fonts as $font) {
     echo '<link href="https://fonts.googleapis.com/css?family='.$f.'" rel="stylesheet" type="text/css"/>';
 } ?>
 </head>
-<body class="<?=$sm['theme']['profileOff_bg']['val']; ?>" style="background: <?=$sm['theme']['profileOff_bg']['val']; ?>">
+<body class="<?php echo $sm['theme']['profileOff_bg']['val']; ?>" style="background: <?php echo $sm['theme']['profileOff_bg']['val']; ?>">
 <div class="landing">
   <div class="landingLogo">
-    <a href="<?= $sm['config']['site_url']; ?>"><img class="responsive-img" src="<?= $sm['theme']['profileOff_logo']['val']; ?>" style="max-width: 180px" /></a>
+    <a href="<?php echo  $sm['config']['site_url']; ?>"><img class="responsive-img" src="<?php echo  $sm['theme']['profileOff_logo']['val']; ?>" style="max-width: 180px" /></a>
   </div>
 
   <div class="landing__content">
-    <div class="landing__profilePhoto hasStory box-shadow-left-profile" onclick="openStory(<?= $sm['profile']['story']; ?>,<?= $sm['profile']['id']; ?>)">
+    <div class="landing__profilePhoto hasStory box-shadow-left-profile" onclick="openStory(<?php echo  $sm['profile']['story']; ?>,<?php echo  $sm['profile']['id']; ?>)">
       <div class="roller" data-storyRoller data-loading-story style="display: none"></div>
       <div class="over-roller" data-storyPath data-loading-story style="display: none"></div>          
     </div>
-    <h2 class="profileName" style="margin-top: 35px;color: <?= $sm['theme']['profileOff_color']['val']; ?>">
-      <?= $sm['profile']['first_name']; ?>,<?= $sm['profile']['age']; ?>   
+    <h2 class="profileName" style="margin-top: 35px;color: <?php echo  $sm['theme']['profileOff_color']['val']; ?>">
+      <?php echo  $sm['profile']['first_name']; ?>,<?php echo  $sm['profile']['age']; ?>
     </h2>    
-    <h3 class="landing__text profileBio <?=$sm['theme']['profileOff_bio_bg']['val']; ?>" style="margin-top: 10px;background: <?=$sm['theme']['profileOff_bio_bg']['val']; ?>">
+    <h3 class="landing__text profileBio <?php echo $sm['theme']['profileOff_bio_bg']['val']; ?>" style="margin-top: 10px;background: <?php echo $sm['theme']['profileOff_bio_bg']['val']; ?>">
       <?php if(empty($sm['profile']['bio'])){ ?>
-        <?= $sm['lang'][814]['text']; ?>
+        <?php echo  $sm['lang'][814]['text']; ?>
       <?php } else { ?>
-        <?= $sm['profile']['bio']; ?>        
+        <?php echo  $sm['profile']['bio']; ?>
       <?php } ?>
     </h3>
   </div>
 
 </div>
 
-<div class="footerLanding <?=$sm['theme']['profileOff_bg']['val']; ?>" style="background: <?=$sm['theme']['profileOff_bg']['val']; ?>;color: <?=$sm['theme']['profileOff_color']['val']; ?>"> 
+<div class="footerLanding <?php echo $sm['theme']['profileOff_bg']['val']; ?>" style="background: <?php echo $sm['theme']['profileOff_bg']['val']; ?>;color: <?php echo $sm['theme']['profileOff_color']['val']; ?>">
   <h3>
-    <?= $sm['lang'][815]['text']; ?> <?= $sm['config']['name']; ?>.
+    <?php echo  $sm['lang'][815]['text']; ?> <?php echo  $sm['config']['name']; ?>.
   </h3>
-  <a class="btn profileRegister <?=$sm['theme']['profileOff_register_bg']['val']; ?>" style="background: <?=$sm['theme']['profileOff_register_bg']['val']; ?>;max-width: 100%;border-radius: 3px;text-align: center;" href="<?= $sm['config']['site_url']; ?>"><strong><?= $sm['lang'][816]['text']; ?></strong></a>  
+  <a class="btn profileRegister <?php echo $sm['theme']['profileOff_register_bg']['val']; ?>" style="background: <?php echo $sm['theme']['profileOff_register_bg']['val']; ?>;max-width: 100%;border-radius: 3px;text-align: center;" href="<?php echo  $sm['config']['site_url']; ?>"><strong><?php echo  $sm['lang'][816]['text']; ?></strong></a>
 </div>
 
 <?php if($sm['theme']['preload_enable']['val'] == 'Yes'){ ?> 
-    <div id="preloader-container" style="background: <?= $sm['theme']['preload_bg']['val']; ?>;"><div id="preloader"><img class="icon" src="<?= $sm['theme']['preload_image']['val']; ?>">
+    <div id="preloader-container" style="background: <?php echo  $sm['theme']['preload_bg']['val']; ?>;"><div id="preloader"><img class="icon" src="<?php echo  $sm['theme']['preload_image']['val']; ?>">
     </div></div>    
 <?php } ?>
 
 <!-- cookies -->
 <?php if($sm['plugins']['terms']['showCookies'] == 'Yes'){ ?>
-    <?= getAbsolutePage('terms/cookiesLaw'); ?>
+    <?php echo  getAbsolutePage('terms/cookiesLaw'); ?>
 <?php } ?>
 
 <div id="storytime" data-story="0"></div>
@@ -189,7 +189,7 @@ var socialStory = new Story({
     playlist: currentStory
 }); 
 
-storyLoader(<?= $sm['profile']['story']; ?>,'<?= $sm['profile']['stories']; ?>',<?= $sm['profile']['status_info']; ?>);    
+storyLoader(<?php echo  $sm['profile']['story']; ?>,'<?php echo  $sm['profile']['stories']; ?>',<?php echo  $sm['profile']['status_info']; ?>);
 
 $(window).on('load', function() {
     var h = $('html').height();

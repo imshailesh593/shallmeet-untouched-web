@@ -21,19 +21,19 @@ $all = $all['id'] + 1; ?>
         <div class="col-lg-4" style="padding-right: 10px;padding-top: 10px">
             <div class="card" style="max-height: 450px;min-height: 450px;overflow-y: auto">
                 <div class="card-header card-header-large bg-white d-flex align-items-center">
-                    <h3 class="card-header__title flex m-0" style="font-weight: bold"><?= $entry['question']; ?></h3>
+                    <h3 class="card-header__title flex m-0" style="font-weight: bold"><?php echo  $entry['question']; ?></h3>
                     <div>
-                      <a class="btn btn-light" data-btn-q="<?= $entry['id']; ?>" onclick="updateAnswers(<?= $entry['id']; ?>,<?= $c; ?>)">Update</a>                            
+                      <a class="btn btn-light" data-btn-q="<?php echo  $entry['id']; ?>" onclick="updateAnswers(<?php echo  $entry['id']; ?>,<?php echo  $c; ?>)">Update</a>
                     </div>
                 </div>
                 <div class="card-body bg-light" style="padding:0">
                   <ul class="list-group list-lessons">
                   <?php foreach($answer as $a){ ?>
-                      <li class="list-group-item d-flex q-<?= $entry['id']; ?>" contenteditable="true" data-answer="<?= $a['id']; ?>">
-                          <?= $a['answer']; ?>
+                      <li class="list-group-item d-flex q-<?php echo  $entry['id']; ?>" contenteditable="true" data-answer="<?php echo  $a['id']; ?>">
+                          <?php echo  $a['answer']; ?>
                       </li>
                   <?php } ?>                          
-                      <li class="list-group-item d-flex bg-light q-<?= $entry['id']; ?>" placeholder="Add answer" contenteditable="true" data-answer="<?= $c; ?>"></li>
+                      <li class="list-group-item d-flex bg-light q-<?php echo  $entry['id']; ?>" placeholder="Add answer" contenteditable="true" data-answer="<?php echo  $c; ?>"></li>
                   </ul>
                 </div>
                 <div class="card-footer text-center bg-white">

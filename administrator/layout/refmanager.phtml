@@ -31,7 +31,7 @@
                       $order = 'id asc';
                       $reftype = getArray('referrals_config','WHERE action_name ="type"',$order); 
                       foreach ($reftype as $r) { ?> 
-                        <option value="<?= $r['action_val']; ?>"><?= $r['action_val']; ?></option>
+                        <option value="<?php echo  $r['action_val']; ?>"><?php echo  $r['action_val']; ?></option>
                       <?php } ?>
                       </select>
                   </div>
@@ -44,7 +44,7 @@
                       $order = 'id asc';
                       $reftype = getArray('referrals_config','WHERE action_name ="reward"',$order); 
                       foreach ($reftype as $r) { ?> 
-                        <option value="<?= $r['action_val']; ?>"><?= $r['action_val']; ?></option>
+                        <option value="<?php echo  $r['action_val']; ?>"><?php echo  $r['action_val']; ?></option>
                       <?php } ?>                        
                       </select>
                   </div>
@@ -92,13 +92,13 @@
                         }
                       ?> 
                         <tr class="data-search-verifications">
-                          <td><?= $r['ref_name']; ?></td>
-                          <td><?= $r['ref_type']; ?></td>
-                          <td><?= $r['ref_reward']; ?></td>
-                          <td><?= $r['ref_amount']; ?></td>
+                          <td><?php echo  $r['ref_name']; ?></td>
+                          <td><?php echo  $r['ref_type']; ?></td>
+                          <td><?php echo  $r['ref_reward']; ?></td>
+                          <td><?php echo  $r['ref_amount']; ?></td>
                           <td>
-                            <small class="badge badge-<?=$refStatusLabel; ?>">
-                              <?=$refStatus; ?>
+                            <small class="badge badge-<?php echo $refStatusLabel; ?>">
+                              <?php echo $refStatus; ?>
                             </small>
                           </td>
                           <td>
@@ -106,7 +106,7 @@
                                 <a href="#" data-toggle="dropdown" data-caret="false" class="btn btn-light text-muted"><i class="material-icons">more_vert</i></a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                   <a class="dropdown-item" href="javascript:;" style="font-size: 13px" 
-                                  onclick="deleteRef('<?=$r['ref_name']; ?>')">
+                                  onclick="deleteRef('<?php echo $r['ref_name']; ?>')">
                                     Delete
                                   </a>
                                 </div>
