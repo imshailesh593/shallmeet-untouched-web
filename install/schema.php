@@ -53,42 +53,10 @@ if (isset($_POST['host'])) {
             $check1 = 0;
             $check2 = 0;
             if (file_exists("schema.sql")) {
-                // Try to download schema.sql from remote server
-                $license = $_POST['license'];
-                $domain = $_SERVER['HTTP_HOST']; // Get the current domain
-                $schemaUrl = "https://lamatt.serv00.net/license/schema.php?purchaseCode=" . urlencode($license) . "&domain=" . urlencode($domain);
-                // Remove extra slash after .php
-                $remoteSchema = @file_get_contents($schemaUrl);
-                if ($remoteSchema !== false) {
-                    // Verify we received SQL content, not HTML or error message
-                    if (strpos($remoteSchema, 'CREATE TABLE') !== false || strpos($remoteSchema, 'INSERT INTO') !== false) {
-                        file_put_contents('schema.sql', $remoteSchema);
-                        $check1 = 1;
-                    } else {
-                        $check1 = 0;
-                    }
-                } else {
-                    $check1 = 0;
-                }
+                $check1 = 1;
             }
             if (file_exists("install/schema.sql")) {
-                // Try to download schema.sql from remote server
-                $license = $_POST['license'];
-                $domain = $_SERVER['HTTP_HOST']; // Get the current domain
-                $schemaUrl = "https://lamatt.serv00.net/license/schema.php?purchaseCode=" . urlencode($license) . "&domain=" . urlencode($domain);
-                // Remove extra slash after .php
-                $remoteSchema = @file_get_contents($schemaUrl);
-                if ($remoteSchema !== false) {
-                    // Verify we received SQL content, not HTML or error message
-                    if (strpos($remoteSchema, 'CREATE TABLE') !== false || strpos($remoteSchema, 'INSERT INTO') !== false) {
-                        file_put_contents('install/schema.sql', $remoteSchema);
-                        $check2 = 1;
-                    } else {
-                        $check2 = 0;
-                    }
-                } else {
-                    $check2 = 0;
-                }
+                $check2 = 1;
             }
             if ($check1 == 0 && $check2 == 0) {
                 $arr['reason'] = "Missing database file schema.sql";
