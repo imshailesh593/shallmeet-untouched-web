@@ -209,7 +209,7 @@ $url = str_replace('install/', '', url());
             </div>
             <?php if ($server_error === false) { ?>
                 <h4 style="text-align: center">Server is OK to proceed with the installation</h4>
-                <a href="javascript:;" onclick="nextStep(3)" class="form__button nextBtn"
+                <a href="javascript:;" onclick="nextStep(2)" class="form__button nextBtn"
                     style="margin-top: 15px;border-radius: 3px;text-align: center;font-size: 18px">Continue</a>
             <?php } else { ?>
                 <h4 style="text-align: center">Lamat Installer cannot proceed with the installation, please fix the issues
@@ -348,13 +348,13 @@ $url = str_replace('install/', '', url());
                         <input class="form__input" type="text" name="password">
                     </div>
                 </div>
-                <input class="form__input" type="hidden" name="fullData" id="formData" value='{"client":"Localhost User","licenseType":"Extended","licenseFakeUsers":1000,"domainsMax":100,"domainsCount":1,"premium":1,"active":1}' required>
-                <input class="form__input" type="hidden" name="license" id="formLicense" value="GPL-FREE-LICENSE" required>
-                <input class="form__input" type="hidden" name="client" id="formClient" value="Localhost User" required>
-                <input class="form__input" type="hidden" name="fakeUsers" id="formFakeUsers" value="1000" required>
-                <input class="form__input" type="hidden" name="domainsUsage" id="formDomainsUsage" value="1" required>
-                <input class="form__input" type="hidden" name="domainsLimit" id="formDomains" value="100" required>
-                <input class="form__input" type="hidden" name="premium" id="formPremium" value="1" required>
+                <input class="form__input" type="hidden" name="fullData" id="formData" required>
+                <input class="form__input" type="hidden" name="license" id="formLicense" required>
+                <input class="form__input" type="hidden" name="client" id="formClient" required>
+                <input class="form__input" type="hidden" name="fakeUsers" id="formFakeUsers" required>
+                <input class="form__input" type="hidden" name="domainsUsage" id="formDomainsUsage" required>
+                <input class="form__input" type="hidden" name="domainsLimit" id="formDomains" required>
+                <input class="form__input" type="hidden" name="premium" id="formPremium" required>
 
 
                 <div style="padding: 4px; margin: 3px; border: 1px none solid; font-size: 14px;width: 75%;margin-left: 25%;color:#000;text-align: center;display: none"
@@ -383,7 +383,7 @@ $url = str_replace('install/', '', url());
                     </div>
                 </div>
                 <div class="form__item form__item--actions" style="margin-top: 20px">
-                    <span style="cursor: pointer;" class="goBackBtn" onclick="nextStep(1)">Go Back</span>
+                    <span style="cursor: pointer;" class="goBackBtn" onclick="nextStep(2)">Go Back</span>
                     <button class="form__button" type="submit">
                         Install database
                     </button>
@@ -493,7 +493,7 @@ $url = str_replace('install/', '', url());
                 <h1 class="lamat-header__title" style="padding-top: 25px">Lamat Software Installer</h1>
                 <h2>Software Installation is complete 🎉🎉</h2>
                 <p class="info" style="color: #444;font-size: 16px;margin-bottom: 50px">Congratulations! <strong
-                        id="clientName">Localhost User</strong>, you've finished installing <b>Lamat Software</b>.<br>
+                        id="clientName"> </strong>, you've finished installing <b>Lamat Software</b>.<br>
                     The installation directory will now be deleted as a safety measure.</p>
 
                 <a class="form__button" style="border-radius: 5px;border: 2px solid #000;color:#fff;background:#000"
@@ -589,8 +589,6 @@ $url = str_replace('install/', '', url());
             $('[data-step=' + val + ']').show();
             if (val == 5) {
                 // getSoftwareUpdates();
-                $('[data-installing-updates]').hide();
-                $('[data-updates-installed]').show();
             }
         }
 
